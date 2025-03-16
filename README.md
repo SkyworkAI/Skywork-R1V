@@ -6,28 +6,6 @@
   <img src="https://github.com/skyipeng/readme_r1v_test/raw/main/pic/logo.jpeg" width="60%" alt="DeepSeek-V3" />
 </div>
 <hr>
-<div align="center" style="line-height: 1;">
-  <a href="https://www.deepseek.com/"><img alt="Homepage"
-    src="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/badge.svg?raw=true"/></a>
-  <a href="https://chat.deepseek.com/"><img alt="Chat"
-    src="https://img.shields.io/badge/🤖%20Chat-DeepSeek%20V3-536af5?color=536af5&logoColor=white"/></a>
-  <a href="https://huggingface.co/deepseek-ai"><img alt="Hugging Face"
-    src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-DeepSeek%20AI-ffc107?color=ffc107&logoColor=white"/></a>
-  <br>
-  <a href="https://discord.gg/Tc7c45Zzu5"><img alt="Discord"
-    src="https://img.shields.io/badge/Discord-DeepSeek%20AI-7289da?logo=discord&logoColor=white&color=7289da"/></a>
-  <a href="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/qr.jpeg?raw=true"><img alt="Wechat"
-    src="https://img.shields.io/badge/WeChat-DeepSeek%20AI-brightgreen?logo=wechat&logoColor=white"/></a>
-  <a href="https://twitter.com/deepseek_ai"><img alt="Twitter Follow"
-    src="https://img.shields.io/badge/Twitter-deepseek_ai-white?logo=x&logoColor=white"/></a>
-  <br>
-  <a href="https://github.com/deepseek-ai/DeepSeek-V3/blob/main/LICENSE-CODE"><img alt="Code License"
-    src="https://img.shields.io/badge/Code_License-MIT-f5de53?&color=f5de53"/></a>
-  <a href="https://github.com/deepseek-ai/DeepSeek-V3/blob/main/LICENSE-MODEL"><img alt="Model License"
-    src="https://img.shields.io/badge/Model_License-Model_Agreement-f5de53?&color=f5de53"/></a>
-  <br>
-  <a href="DeepSeek_V3.pdf"><b>Paper Link</b>👁️</a>
-</div>
 
 ## Table of Contents
 
@@ -41,48 +19,42 @@
 8. [Citation](#8-citation)
 9. [Contact](#9-contact)
 
-
 ## 1. Introduction
 
-We present DeepSeek-V3, a strong Mixture-of-Experts (MoE) language model with 671B total parameters with 37B activated for each token. 
-To achieve efficient inference and cost-effective training, DeepSeek-V3 adopts Multi-head Latent Attention (MLA) and DeepSeekMoE architectures, which were thoroughly validated in DeepSeek-V2. 
-Furthermore, DeepSeek-V3 pioneers an auxiliary-loss-free strategy for load balancing and sets a multi-token prediction training objective for stronger performance. 
-We pre-train DeepSeek-V3 on 14.8 trillion diverse and high-quality tokens, followed by Supervised Fine-Tuning and Reinforcement Learning stages to fully harness its capabilities. 
-Comprehensive evaluations reveal that DeepSeek-V3 outperforms other open-source models and achieves performance comparable to leading closed-source models.
-Despite its excellent performance, DeepSeek-V3 requires only 2.788M H800 GPU hours for its full training.
-In addition, its training process is remarkably stable. 
-Throughout the entire training process, we did not experience any irrecoverable loss spikes or perform any rollbacks. 
-<p align="center">
-  <img width="80%" src="figures/benchmark.png">
-</p>
+We introduce Skywork-R1V, a multimodal reasoning model that extends the R1-series text models to visual modalities through a near-lossless transfer method. Using a lightweight visual projector, Skywork-R1V enables seamless multimodal adaptation without requiring retraining of either the base language model or vision encoder. To enhance visual-text alignment, we developed a hybrid optimization strategy combining Iterative Supervised Fine-Tuning (SFT) with Group Relative Policy Optimization (GRPO), significantly improving cross-modal integration. Additionally, we created an adaptive-length Chain-of-Thought distillation approach for generating reasoning data, which dynamically optimizes reasoning chain lengths to improve inference efficiency and prevent overthinking. The model achieves state-of-the-art performance on key multimodal reasoning benchmarks, scoring 68.1 on MMMU and 71.0 on MathVista, comparable to leading closed-source models like Gemini 2.0 and Kimi-k1.5. It also maintains strong textual reasoning capabilities, achieving impressive scores of 72.6 on AIME and 94.3 on MATH500. 
 
 ## 2. Model Summary
 
----
+****Architecture:**** 
 
-**Architecture: Innovative Load Balancing Strategy and Training Objective**
+Skywork-R1V employs a modular architecture that efficiently combines vision and language capabilities:
 
-- On top of the efficient architecture of DeepSeek-V2, we pioneer an auxiliary-loss-free strategy for load balancing, which minimizes the performance degradation that arises from encouraging load balancing.
--  We investigate a Multi-Token Prediction (MTP) objective and prove it beneficial to model performance. 
-    It can also be used for speculative decoding for inference acceleration. 
+- Vision Encoder: Uses Vision Transformer (ViT) as the visual backbone to process image inputs.
+- Visual Projector: A lightweight MLP (multilayer perceptron) adapter that serves as the bridge between the vision and language components.
+- Language Model: Utilizes R1-distilled-Qwen-32B as the reasoning-capable language model backbone.
 
----
+The model follows a connection pattern of Vision Encoder → MLP Adapter → Language Model, where the MLP adapter aligns the output space of the vision encoder with the input space of the language model. This design allows for efficient transfer of reasoning capabilities from text to multimodal domains without requiring extensive retraining of either the vision encoder or language model.
 
-**Pre-Training: Towards Ultimate Training Efficiency**
+ ****Methodology****
 
-- We design an FP8 mixed precision training framework and, for the first time, validate the feasibility and effectiveness of FP8 training on an extremely large-scale model.  
-- Through co-design of algorithms, frameworks, and hardware, we overcome the communication bottleneck in cross-node MoE training, nearly achieving full computation-communication overlap.  
-  This significantly enhances our training efficiency and reduces the training costs, enabling us to further scale up the model size without additional overhead.  
-- At an economical cost of only 2.664M H800 GPU hours, we complete the pre-training of DeepSeek-V3 on 14.8T tokens, producing the currently strongest open-source base model. The subsequent training stages after pre-training require only 0.1M GPU hours.
+_Efficient Multimodal Transfer of Reasoning-Capable LLMs：_
+A staged alignment approach that efficiently transfers reasoning capabilities from text to vision by first connecting a vision encoder to a substitute LLM before transferring to the reasoning-capable LLM, preserving reasoning abilities while minimizing data requirements.
+- The MLP adapter is first trained to align the ViT with a substitute LLM (Qwen-32B-Instruct) using 2M samples of SFT data, while keeping both the vision encoder and language model frozen.
+- The trained MLP is then transferred to connect the ViT with the reasoning-capable LLM (R1-distilled-Qwen-32B).
+- Fine-tuning only the MLP parameters while keeping the vision encoder and language model frozen, ensuring preservation of reasoning capabilities while effectively aligning visual and textual representations.
 
----
+_Hybrid Optimization Framework：_
+A multi-stage training strategy combining iterative supervised fine-tuning with reinforcement learning that progressively improves model performance through error correction and reward-based optimization.
+- Initial supervised fine-tuning (SFT) using the complete dataset.
+- Iterative training with customized data. A reward model evaluates data quality and selects high-scoring samples. 
+- Reinforcement learning using Group Relative Policy Optimization (GRPO) with a rule-based reward system (accuracy and format rewards) to enhance generalizability.
 
-**Post-Training: Knowledge Distillation from DeepSeek-R1**
-
--   We introduce an innovative methodology to distill reasoning capabilities from the long-Chain-of-Thought (CoT) model, specifically from one of the DeepSeek R1 series models, into standard LLMs, particularly DeepSeek-V3. Our pipeline elegantly incorporates the verification and reflection patterns of R1 into DeepSeek-V3 and notably improves its reasoning performance. Meanwhile, we also maintain a control over the output style and length of DeepSeek-V3.
-
----
-
+_Adaptive-Length Chain-of-Thought Distillation:_ 
+The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to generate high-quality reasoning-oriented training data
+- Evaluates image-text pairs through vision and text scoring.
+- Determines required depth of cross-modal integration.
+- Adaptively regulates reasoning chain length based on query complexity.
+- Progressive refinement of reasoning processes with external evaluation and correction when needed.
 
 ## 3. Model Downloads
 
@@ -335,22 +307,25 @@ In collaboration with the AMD team, we have achieved Day-One support for AMD GPU
 ### 6.7 Recommended Inference Functionality with Huawei Ascend NPUs
 The [MindIE](https://www.hiascend.com/en/software/mindie) framework from the Huawei Ascend community has successfully adapted the BF16 version of DeepSeek-V3. For step-by-step guidance on Ascend NPUs, please follow the [instructions here](https://modelers.cn/models/MindIE/deepseekv3).
 
-
 ## 7. License
-This code repository is licensed under [the MIT License](LICENSE-CODE). The use of DeepSeek-V3 Base/Chat models is subject to [the Model License](LICENSE-MODEL). DeepSeek-V3 series (including Base and Chat) supports commercial use.
+This code repository is licensed under [the MIT License](LICENSE-CODE). 
+✅ Commercial use permitted
+
+✅ Modification allowed
+
+✅ Distribution allowed
+
+❌ No liability
+
 
 ## 8. Citation
-```
-@misc{deepseekai2024deepseekv3technicalreport,
-      title={DeepSeek-V3 Technical Report}, 
-      author={DeepSeek-AI},
-      year={2024},
-      eprint={2412.19437},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2412.19437}, 
-}
-```
+If you use Skywork-R1V in your research, please cite:
 
-## 9. Contact
-If you have any questions, please raise an issue or contact us at [service@deepseek.com](service@deepseek.com).
+```
+@article{skywork2025r1v,
+  title     = {Skywork-R1V: Bridging Vision and Language for Advanced Multimodal Reasoning},
+  author    = {Skywork VL Team},
+  year      = {2025},
+  journal   = {arXiv preprint arXiv:XXXX.XXXXX},
+  url       = {https://github.com/skywork-ai/Skywork-R1V}
+}
