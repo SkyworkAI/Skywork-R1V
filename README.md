@@ -3,7 +3,7 @@
 <!-- markdownlint-disable no-duplicate-header -->
 
 <div align="center">
-  <img src="https://github.com/skyipeng/readme_r1v_test/raw/main/pic/logo.jpeg" width="60%" alt="DeepSeek-V3" />
+  <img src="https://github.com/skyipeng/readme_r1v_test/raw/main/pic/logo.jpeg" width="60%" alt="skywork-r1v" />
 </div>
 <hr>
 
