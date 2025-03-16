@@ -296,11 +296,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
 
 ## 5. How to Run Locally
 
-```shell
-cd inference
-python fp8_cast_bf16.py --input-fp8-hf-path /path/to/fp8_weights --output-bf16-hf-path /path/to/bf16_weights
-```
-
 ```
 #### Model Weights & Demo Code Preparation
 
