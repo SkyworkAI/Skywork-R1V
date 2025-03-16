@@ -322,7 +322,7 @@ Download the model weights from Hugging Face, and put them into `/path/to/skywor
 
 #### Run
 
-Then you can chat with DeepSeek-V3:
+Then you can chat with skywork-r1v:
 
 ```shell
 torchrun --nnodes 2 --nproc-per-node 8 --node-rank $RANK --master-addr $ADDR generate.py --ckpt-path /path/to/DeepSeek-V3-Demo --config configs/config_671B.json --interactive --temperature 0.7 --max-new-tokens 200
