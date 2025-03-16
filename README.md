@@ -67,6 +67,11 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
 </div>
 
 ## 4. Evaluation Results
+<div align="center">
+  <img src="https://github.com/skyipeng/readme_r1v_test/raw/main/pic/eval.jpeg" width="60%" alt="skywork_r1v_eval" />
+</div>
+
+
 ### Base Model
 #### Standard Benchmarks
 
