@@ -13,9 +13,9 @@
 2. [Model Summary](#2-model-summary)
 3. [Model Downloads](#3-model-downloads)
 4. [Evaluation Results](#4-evaluation-results)
-5. [How to Run Locally](#6-how-to-run-locally)
-6. [License](#7-license)
-7. [Citation](#8-citation)
+5. [How to Run Locally](#5-how-to-run-locally)
+6. [License](#6-license)
+7. [Citation](#7-citation)
 
 ## 1. Introduction
 
