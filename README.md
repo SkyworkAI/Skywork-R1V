@@ -1,6 +1,7 @@
 <!-- markdownlint-disable first-line-h1 -->
 <!-- markdownlint-disable html -->
 <!-- markdownlint-disable no-duplicate-header -->
+![image](https://github.com/skyipeng/readme_r1v_test/raw/main/pic/logo.jpeg) 
 
 <div align="center">
   <img src="https://github.com/deepseek-ai/DeepSeek-V2/blob/main/figures/logo.svg?raw=true" width="60%" alt="DeepSeek-V3" />
