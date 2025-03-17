@@ -2,10 +2,13 @@
 <!-- markdownlint-disable html -->
 <!-- markdownlint-disable no-duplicate-header -->
 
+# Skywork-R1V
+
 <div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/pic/logo.jpeg" width="60%" alt="skywork-r1v" />
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/logo.jpeg" width="60%" alt="skywork-r1v" />
 </div>
-<hr>
+
+## 📖 [Paper](https://github.com/SkyworkAI/Skywork-R1V/blob/main/paper.pdf)
 
 ## Table of Contents
 
@@ -66,7 +69,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
 
 ## 4. Evaluation Results
 <div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/pic/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
 </div>
 
 <div align="center">
