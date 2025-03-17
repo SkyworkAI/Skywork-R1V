@@ -308,7 +308,7 @@ If you use Skywork-R1V in your research, please cite:
 
 ```
 @article{skywork2025r1v,
-  title     = {Skywork-R1V: Bridging Vision and Language for Advanced Multimodal Reasoning},
+  title     = {Skywork R1V: Transferring Reasoning to Vision-Language Models via Reinforcement Learning},
   author    = {Skywork VL Team},
   year      = {2025},
   journal   = {arXiv preprint arXiv:XXXX.XXXXX},
