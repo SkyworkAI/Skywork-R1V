@@ -279,12 +279,6 @@ First, clone our skywork-r1v GitHub repository:
 git clone https://github.com/SkyworkAI/Skywork-R1V.git
 ```
 
-Navigate to the `inference` folder and install dependencies listed in `requirements.txt`. Easiest way is to use a package manager like `conda` or `uv` to create a new virtual environment and install the dependencies.
-
-```shell
-cd skywork-r1v/inference
-pip install -r requirements.txt
-```
 
 Download the model weights from Hugging Face, and put them into `/path/to/skywork-r1v` folder.
 
@@ -297,11 +291,6 @@ Then you can chat with skywork-r1v:
 torchrun --nnodes 2 --nproc-per-node 8 --node-rank $RANK --master-addr $ADDR generate.py --ckpt-path /path/to/skywork-r1v-Demo --config configs/config_38B.json --interactive --temperature 0.7 --max-new-tokens 200
 ```
 
-Or batch inference on a given file:
-
-```shell
-torchrun --nnodes 2 --nproc-per-node 8 --node-rank $RANK --master-addr $ADDR generate.py --ckpt-path /path/to/skywork-r1v-Demo --config configs/config_38B.json --input-file $FILE
-```
 
 ## 6. License
 This code repository is licensed under [the MIT License](LICENSE-CODE). 
