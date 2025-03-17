@@ -3,7 +3,7 @@
 <!-- markdownlint-disable no-duplicate-header -->
 
 <div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/pic/logo.jpeg" width="60%" alt="skywork-r1v" />
+  <img src="https://github.com/skyipeng/readme_r1v_test/raw/main/pic/logo.jpeg" width="60%" alt="skywork-r1v" />
 </div>
 <hr>
 
@@ -65,6 +65,9 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
 </div>
 
 ## 4. Evaluation Results
+<div align="center">
+  <img src="https://github.com/skyipeng/readme_r1v_test/raw/main/pic/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
+</div>
 
 <div align="center">
   <b>Evaluation results of state-of-the-art LLMs and VLMs</b>
@@ -75,7 +78,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <th></th>
       <th align="center"><strong>Vision</strong></th>
       <th align="center" colspan="3"><strong>Reasoning</strong></th>
-      <th align="center" colspan="2"><strong>Vision</strong></th>
+      <th align="center" colspan="3"><strong>Vision</strong></th>
     </tr>
     <tr>
       <th></th>
@@ -85,10 +88,12 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <th align="center"><strong>GPQA</strong></th>
       <th align="center"><strong>MathVista(mini)</strong></th>
       <th align="center"><strong>MMMU(Val)</strong></th>
+      <th align="center"><strong>CSVQA</strong></th>
     </tr>
     <tr>
       <th></th>
       <th></th>
+      <th align="center">pass@1</th>
       <th align="center">pass@1</th>
       <th align="center">pass@1</th>
       <th align="center">pass@1</th>
@@ -105,6 +110,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">49.0</td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>Deepseek V3</td>
@@ -112,6 +118,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">90.2</td>
       <td align="center">39.2</td>
       <td align="center">59.1</td>
+      <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
     </tr>
@@ -123,6 +130,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">71.5</td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>Claude 3.5 Sonnet</td>
@@ -132,6 +140,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">65.0</td>
       <td align="center">67.7</td>
       <td align="center">68.3</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>GPT-4o</td>
@@ -141,6 +150,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">53.6</td>
       <td align="center">63.8</td>
       <td align="center">69.1</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>Kimi k1.5</td>
@@ -150,6 +160,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">74.9</td>
       <td align="center">70.0</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>Qwen2.5-VL-72B-Instruct</td>
@@ -159,6 +170,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">74.8</td>
       <td align="center">70.2</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>LLaVA-Onevision-72B</td>
@@ -168,6 +180,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">67.5</td>
       <td align="center">56.8</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>InternVL2-Llama3-76B</td>
@@ -177,6 +190,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">65.5</td>
       <td align="center">58.3</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>InternVL2.5-78B</td>
@@ -186,6 +200,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">72.3</td>
       <td align="center">70.1</td>
+      <td align="center">-</td>
     </tr>
     <tr>
       <td>Skywork-R1V-38B</td>
@@ -193,8 +208,9 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">94.0</td>
       <td align="center">72.0</td>
       <td align="center">61.6</td>
-      <td align="center">67.5</td>
-      <td align="center">69.0</td>
+      <td align="center">71.0</td>
+      <td align="center">68.1</td>
+      <td align="center">XXX</td>
     </tr>
   </tbody>
 </table>
@@ -254,7 +270,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">71.9</td>
       <td align="center">49.5</td>
       <td align="center">63.7</td>
-      <td align="center">67.5</td>
+      <td align="center">71.0</td>
     </tr>
     <tr>
       <td>MMMU(Val)</td>
@@ -262,7 +278,15 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">63.9</td>
       <td align="center">55.1</td>
       <td align="center">55.2</td>
-      <td align="center">69.0</td>
+      <td align="center">68.1</td>
+    </tr>
+    <tr>
+      <td>CSVQA</td>
+      <td align="center">-</td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
+      <td align="center"></td>
     </tr>
   </tbody>
 </table>
@@ -270,25 +294,19 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
 
 ## 5. How to Run Locally
 
-```
-#### Model Weights & Demo Code Preparation
-
-First, clone our skywork-r1v GitHub repository:
+First, clone our skywork-r1v GitHub repository, Navigate to the `inference` folder 
 
 ```shell
 git clone https://github.com/SkyworkAI/Skywork-R1V.git
+cd skywork-r1v/inference
 ```
-
-
-Download the model weights from Hugging Face, and put them into `/path/to/skywork-r1v` folder.
-
 
 #### Run
 
-Then you can chat with skywork-r1v:
+Prepare your images and questions, and update them to inference_with_transformers.py
 
 ```shell
-torchrun --nnodes 2 --nproc-per-node 8 --node-rank $RANK --master-addr $ADDR generate.py --ckpt-path /path/to/skywork-r1v-Demo --config configs/config_38B.json --interactive --temperature 0.7 --max-new-tokens 200
+python inference_with_transformers.py
 ```
 
 
@@ -308,7 +326,7 @@ If you use Skywork-R1V in your research, please cite:
 
 ```
 @article{skywork2025r1v,
-  title     = {Skywork R1V: Transferring Reasoning to Vision-Language Models via Reinforcement Learning},
+  title     = {Skywork-R1V: Bridging Vision and Language for Advanced Multimodal Reasoning},
   author    = {Skywork VL Team},
   year      = {2025},
   journal   = {arXiv preprint arXiv:XXXX.XXXXX},
