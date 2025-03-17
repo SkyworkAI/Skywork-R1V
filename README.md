@@ -196,8 +196,8 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">94.0</td>
       <td align="center">72.0</td>
       <td align="center">61.6</td>
-      <td align="center">71.0</td>
-      <td align="center">68.1</td>
+      <td align="center">67.5</td>
+      <td align="center">69.0</td>
     </tr>
   </tbody>
 </table>
@@ -257,7 +257,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">71.9</td>
       <td align="center">49.5</td>
       <td align="center">63.7</td>
-      <td align="center">71.0</td>
+      <td align="center">67.5</td>
     </tr>
     <tr>
       <td>MMMU(Val)</td>
@@ -265,7 +265,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">63.9</td>
       <td align="center">55.1</td>
       <td align="center">55.2</td>
-      <td align="center">68.1</td>
+      <td align="center">69.0</td>
     </tr>
   </tbody>
 </table>
