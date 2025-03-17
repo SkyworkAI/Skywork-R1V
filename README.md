@@ -78,7 +78,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <th></th>
       <th align="center"><strong>Vision</strong></th>
       <th align="center" colspan="3"><strong>Reasoning</strong></th>
-      <th align="center" colspan="3"><strong>Vision</strong></th>
+      <th align="center" colspan="2"><strong>Vision</strong></th>
     </tr>
     <tr>
       <th></th>
@@ -88,12 +88,10 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <th align="center"><strong>GPQA</strong></th>
       <th align="center"><strong>MathVista(mini)</strong></th>
       <th align="center"><strong>MMMU(Val)</strong></th>
-      <th align="center"><strong>CSVQA</strong></th>
     </tr>
     <tr>
       <th></th>
       <th></th>
-      <th align="center">pass@1</th>
       <th align="center">pass@1</th>
       <th align="center">pass@1</th>
       <th align="center">pass@1</th>
@@ -110,7 +108,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">49.0</td>
       <td align="center">-</td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Deepseek V3</td>
@@ -118,7 +115,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">90.2</td>
       <td align="center">39.2</td>
       <td align="center">59.1</td>
-      <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
     </tr>
@@ -130,7 +126,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">71.5</td>
       <td align="center">-</td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Claude 3.5 Sonnet</td>
@@ -140,7 +135,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">65.0</td>
       <td align="center">67.7</td>
       <td align="center">68.3</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>GPT-4o</td>
@@ -150,7 +144,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">53.6</td>
       <td align="center">63.8</td>
       <td align="center">69.1</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Kimi k1.5</td>
@@ -160,7 +153,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">74.9</td>
       <td align="center">70.0</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Qwen2.5-VL-72B-Instruct</td>
@@ -170,7 +162,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">74.8</td>
       <td align="center">70.2</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>LLaVA-Onevision-72B</td>
@@ -180,7 +171,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">67.5</td>
       <td align="center">56.8</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>InternVL2-Llama3-76B</td>
@@ -190,7 +180,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">65.5</td>
       <td align="center">58.3</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>InternVL2.5-78B</td>
@@ -200,7 +189,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">72.3</td>
       <td align="center">70.1</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Skywork-R1V-38B</td>
@@ -210,7 +198,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">61.6</td>
       <td align="center">71.0</td>
       <td align="center">68.1</td>
-      <td align="center">XXX</td>
     </tr>
   </tbody>
 </table>
@@ -279,14 +266,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">55.1</td>
       <td align="center">55.2</td>
       <td align="center">68.1</td>
-    </tr>
-    <tr>
-      <td>CSVQA</td>
-      <td align="center">-</td>
-      <td align="center"></td>
-      <td align="center"></td>
-      <td align="center"></td>
-      <td align="center"></td>
     </tr>
   </tbody>
 </table>
