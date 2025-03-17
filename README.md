@@ -8,7 +8,7 @@
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/logo.jpeg" width="60%" alt="skywork-r1v" />
 </div>
 
-## 📖 [Paper](https://github.com/SkyworkAI/Skywork-R1V/blob/main/paper.pdf)
+## 📖 [Paper](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)
 
 ## Table of Contents
 
