@@ -66,7 +66,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
 
 ## 4. Evaluation Results
 <div align="center">
-  <img src="https://github.com/skyipeng/readme_r1v_test/raw/main/pic/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/pic/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
 </div>
 
 <div align="center">
@@ -306,33 +306,6 @@ print(f'User: {question}\nAssistant: {response}')
 # single-image single-round conversation (单图单轮对话)
 question = '<image>\nSelect the correct option from this question.'
 response = model.chat(tokenizer, pixel_values, question, generation_config)
-print(f'User: {question}\nAssistant: {response}')
-
-# single-image multi-round conversation (单图多轮对话)
-question = '<image>\nSelect the correct option from this question.'
-response, history = model.chat(tokenizer, pixel_values, question, generation_config, history=None, return_history=True)
-print(f'User: {question}\nAssistant: {response}')
-
-question = 'What if the height in the question is changed to 0.5?'
-response, history = model.chat(tokenizer, pixel_values, question, generation_config, history=history, return_history=True)
-print(f'User: {question}\nAssistant: {response}')
-
-# multi-image multi-round conversation, separate images (多图多轮对话，独立图像)
-pixel_values1 = load_image('./examples/image1.jpg', max_num=12).to(torch.bfloat16).cuda()
-pixel_values2 = load_image('./examples/image2.jpg', max_num=12).to(torch.bfloat16).cuda()
-pixel_values = torch.cat((pixel_values1, pixel_values2), dim=0)
-num_patches_list = [pixel_values1.size(0), pixel_values2.size(0)]
-
-question = '<image>\n<image>\nSelect the correct option from this question.'
-response, history = model.chat(tokenizer, pixel_values, question, generation_config,
-                               num_patches_list=num_patches_list,
-                               history=None, return_history=True)
-print(f'User: {question}\nAssistant: {response}')
-
-question = 'What if the height in the question is changed to 0.5?'
-response, history = model.chat(tokenizer, pixel_values, question, generation_config,
-                               num_patches_list=num_patches_list,
-                               history=history, return_history=True)
 print(f'User: {question}\nAssistant: {response}')
 ```
 
