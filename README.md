@@ -19,7 +19,7 @@
 
 ## 1. Introduction
 
-We introduce Skywork-R1V, a multimodal reasoning model that extends the R1-series text models to visual modalities through a near-lossless transfer method. Using a lightweight visual projector, Skywork-R1V enables seamless multimodal adaptation without requiring retraining of either the base language model or vision encoder. To enhance visual-text alignment, we developed a hybrid optimization strategy combining Iterative Supervised Fine-Tuning (SFT) with Group Relative Policy Optimization (GRPO), significantly improving cross-modal integration. Additionally, we created an adaptive-length Chain-of-Thought distillation approach for generating reasoning data, which dynamically optimizes reasoning chain lengths to improve inference efficiency and prevent overthinking. The model achieves state-of-the-art performance on key multimodal reasoning benchmarks, scoring 68.1 on MMMU and 71.0 on MathVista, comparable to leading closed-source models like Gemini 2.0 and Kimi-k1.5. It also maintains strong textual reasoning capabilities, achieving impressive scores of 72.6 on AIME and 94.3 on MATH500. 
+We introduce Skywork-R1V, a multimodal reasoning model that extends the R1-series text models to visual modalities through a near-lossless transfer method. Using a lightweight visual projector, Skywork-R1V enables seamless multimodal adaptation without requiring retraining of either the base language model or vision encoder. To enhance visual-text alignment, we developed a hybrid optimization strategy combining Iterative Supervised Fine-Tuning (SFT) with Group Relative Policy Optimization (GRPO), significantly improving cross-modal integration. Additionally, we created an adaptive-length Chain-of-Thought distillation approach for generating reasoning data, which dynamically optimizes reasoning chain lengths to improve inference efficiency and prevent overthinking. The model achieves good performance on key multimodal reasoning benchmarks, scoring 69.0 on MMMU and 67.5 on MathVista, comparable to leading closed-source models like Gemini 2.0 and Kimi-k1.5. It also maintains strong textual reasoning capabilities, achieving impressive scores of 72.0 on AIME and 94.0 on MATH500. 
 
 ## 2. Model Summary
 
@@ -88,12 +88,10 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <th align="center"><strong>GPQA</strong></th>
       <th align="center"><strong>MathVista(mini)</strong></th>
       <th align="center"><strong>MMMU(Val)</strong></th>
-      <th align="center"><strong>CSVQA</strong></th>
     </tr>
     <tr>
       <th></th>
       <th></th>
-      <th align="center">pass@1</th>
       <th align="center">pass@1</th>
       <th align="center">pass@1</th>
       <th align="center">pass@1</th>
@@ -105,10 +103,9 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
     <tr>
       <td>Qwen2.5-72B-Instruct</td>
       <td align="center">❌</td>
-      <td align="center">82.6</td>
+      <td align="center">80.0</td>
       <td align="center">23.3</td>
       <td align="center">49.0</td>
-      <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
     </tr>
@@ -120,7 +117,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">59.1</td>
       <td align="center">-</td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Deepseek R1</td>
@@ -130,7 +126,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">71.5</td>
       <td align="center">-</td>
       <td align="center">-</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Claude 3.5 Sonnet</td>
@@ -138,19 +133,17 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">78.3</td>
       <td align="center">16.0</td>
       <td align="center">65.0</td>
-      <td align="center">67.7</td>
-      <td align="center">68.3</td>
-      <td align="center">-</td>
+      <td align="center">65.3</td>
+      <td align="center">66.4</td>
     </tr>
     <tr>
       <td>GPT-4o</td>
       <td align="center">✅</td>
-      <td align="center">76.6</td>
+      <td align="center">74.6</td>
       <td align="center">9.3</td>
-      <td align="center">53.6</td>
+      <td align="center">49.9</td>
       <td align="center">63.8</td>
       <td align="center">69.1</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Kimi k1.5</td>
@@ -160,7 +153,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">74.9</td>
       <td align="center">70.0</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Qwen2.5-VL-72B-Instruct</td>
@@ -170,7 +162,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">74.8</td>
       <td align="center">70.2</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>LLaVA-Onevision-72B</td>
@@ -180,7 +171,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">67.5</td>
       <td align="center">56.8</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>InternVL2-Llama3-76B</td>
@@ -189,8 +179,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">65.5</td>
-      <td align="center">58.3</td>
-      <td align="center">-</td>
+      <td align="center">62.7</td>
     </tr>
     <tr>
       <td>InternVL2.5-78B</td>
@@ -200,7 +189,6 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">72.3</td>
       <td align="center">70.1</td>
-      <td align="center">-</td>
     </tr>
     <tr>
       <td>Skywork-R1V-38B</td>
@@ -208,9 +196,8 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">94.0</td>
       <td align="center">72.0</td>
       <td align="center">61.6</td>
-      <td align="center">71.0</td>
-      <td align="center">68.1</td>
-      <td align="center">XXX</td>
+      <td align="center">67.5</td>
+      <td align="center">69.0</td>
     </tr>
   </tbody>
 </table>
@@ -257,7 +244,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
     </tr>
     <tr>
       <td>GPQA</td>
-      <td align="center">65.2</td>
+      <td align="center">54.5</td>
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
@@ -270,7 +257,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">71.9</td>
       <td align="center">49.5</td>
       <td align="center">63.7</td>
-      <td align="center">71.0</td>
+      <td align="center">67.5</td>
     </tr>
     <tr>
       <td>MMMU(Val)</td>
@@ -278,15 +265,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">63.9</td>
       <td align="center">55.1</td>
       <td align="center">55.2</td>
-      <td align="center">68.1</td>
-    </tr>
-    <tr>
-      <td>CSVQA</td>
-      <td align="center">-</td>
-      <td align="center"></td>
-      <td align="center"></td>
-      <td align="center"></td>
-      <td align="center"></td>
+      <td align="center">69.0</td>
     </tr>
   </tbody>
 </table>
@@ -326,8 +305,8 @@ If you use Skywork-R1V in your research, please cite:
 
 ```
 @article{skywork2025r1v,
-  title     = {Skywork-R1V: Bridging Vision and Language for Advanced Multimodal Reasoning},
-  author    = {Skywork VL Team},
+  title     = {Skywork R1V: Bridging Vision and Language for Advanced Multimodal Reasoning},
+  author    = {Yi Peng, Chris, Xiaokun Wang, Yichen Wei, Jiangbo Pei, Weijie Qiu, Ai Jian, Yunzhuo Hao, Jiachun Pan, Tianyidan Xie, Li Ge, Rongxian Zhuang, Xuchen Song, Yang Liu, Yahui Zhou},
   year      = {2025},
   journal   = {arXiv preprint arXiv:XXXX.XXXXX},
   url       = {https://github.com/skywork-ai/Skywork-R1V}
