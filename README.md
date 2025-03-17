@@ -331,6 +331,7 @@ If you use Skywork-R1V in your research, please cite:
   title     = {Skywork R1V: Bridging Vision and Language for Advanced Multimodal Reasoning},
   author    = {Yi Peng, Chris, Xiaokun Wang, Yichen Wei, Jiangbo Pei, Weijie Qiu, Ai Jian, Yunzhuo Hao, Jiachun Pan, Tianyidan Xie, Li Ge, Rongxian Zhuang, Xuchen Song, Yang Liu, Yahui Zhou},
   year      = {2025},
-  journal   = {arXiv preprint arXiv:XXXX.XXXXX},
-  url       = {https://github.com/skywork-ai/Skywork-R1V}
+  journal   = {https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf},
+  url       = {https://huggingface.co/Skywork/Skywork-R1V-38B}
 }
+```
