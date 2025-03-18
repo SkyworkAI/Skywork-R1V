@@ -4,8 +4,18 @@
 
 # Skywork-R1V：Bridging Vision and Language for Advanced Multimodal Reasoning
 
+
 <div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/math_r1v.gif" width="60%" alt="math_r1v" />
+  <table>
+    <tr>
+      <td>
+        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/math_r1v.gif" width="300" height="200" alt="math_r1v" />
+      </td>
+      <td>
+        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/Chemistry_cn.gif" width="300" height="200" alt="chemistry_1" />
+      </td>
+    </tr>
+  </table>
 </div>
 
 <font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
