@@ -8,7 +8,7 @@
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/logo.jpeg" width="60%" alt="skywork-r1v" />
 </div>
 
-## 📖 [technical report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)
+## 📖 [Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)
 
 ## Table of Contents
 
@@ -251,7 +251,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
-      <td align="center">61.6</td>
+      <td align="center"><strong>61.6</strong></td>
     </tr>
     <tr>
       <td rowspan="3">Vision</td>
@@ -268,7 +268,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
       <td align="center">63.9</td>
       <td align="center">55.1</td>
       <td align="center">55.2</td>
-      <td align="center">69.0</td>
+      <td align="center"><strong>69.0</strong></td>
     </tr>
   </tbody>
 </table>
