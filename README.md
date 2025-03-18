@@ -22,7 +22,7 @@
 
 <font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
 
-## 1. Evaluation Results
+## Evaluation 
 
 <br>
 <br>
@@ -234,7 +234,7 @@
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
 </div>
 
-## 2. How to Run Locally
+## How to Run Locally
 
 ```python
 import math
@@ -364,7 +364,7 @@ response, history = model.chat(tokenizer, pixel_values, question, generation_con
 print(f'User: {question}\nAssistant: {response}')
 ```
 
-## 3. License
+## License
 This code repository is licensed under [the MIT License](LICENSE-CODE). 
 ✅ Commercial use permitted
 
@@ -375,7 +375,7 @@ This code repository is licensed under [the MIT License](LICENSE-CODE).
 ❌ No liability
 
 
-## 4. Citation
+## Citation
 If you use Skywork-R1V in your research, please cite:
 
 ```
