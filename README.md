@@ -8,19 +8,9 @@
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/math_r1v.gif" width="60%" alt="math_r1v" />
 </div>
 
-<font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)] [[🤗 Hugging Face](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
+<font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
 
-## 1. Model Downloads
-
-<div align="center">
-
-| **Model** | **#Total Params** | **Download** |
-| :------------: | :------------: | :------------: |
-| skywork-r1v | 38B | [🤗 Hugging Face](https://huggingface.co/Skywork/Skywork-R1V-38B)   |
-
-</div>
-
-## 2. Evaluation Results
+## 1. Evaluation Results
 
 <div align="center">
   <b>Evaluation results of state-of-the-art LLMs and VLMs</b>
@@ -227,7 +217,7 @@
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
 </div>
 
-## 3. How to Run Locally
+## 2. How to Run Locally
 
 ```python
 import math
@@ -357,7 +347,7 @@ response, history = model.chat(tokenizer, pixel_values, question, generation_con
 print(f'User: {question}\nAssistant: {response}')
 ```
 
-## 4. License
+## 3. License
 This code repository is licensed under [the MIT License](LICENSE-CODE). 
 ✅ Commercial use permitted
 
@@ -368,7 +358,7 @@ This code repository is licensed under [the MIT License](LICENSE-CODE).
 ❌ No liability
 
 
-## 5. Citation
+## 4. Citation
 If you use Skywork-R1V in your research, please cite:
 
 ```
