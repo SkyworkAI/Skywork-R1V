@@ -1,4 +1,9 @@
-torch>=2
-pillow
+torch==2.6.0
+pillow==11.1.0
 torchvision>=0.15
 transformers==4.37.2
+einops==0.6.1
+einops-exts==0.0.4
+timm==0.9.12
+bitsandbytes==0.42.0
+accelerate==1.5.2

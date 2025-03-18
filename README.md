@@ -245,7 +245,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 ## How to Run Locally
 
 ### 1. Clone the Repository
-First, clone the repository to your local machine:
 
 ```shell
 git clone https://github.com/SkyworkAI/Skywork-R1V.git
@@ -255,14 +254,16 @@ cd skywork-r1v/inference
 
 ```shell
 pip install -r requirements.txt
+pip install flash-attn --no-build-isolation
 ```
 
 #### 3. Run the Inference Script
 
-Prepare your images and questions, and update them to inference_with_transformers.py
-
 ```shell
-python inference_with_transformers.py
+CUDA_VISIBLE_DEVICES="0,1" python inference_with_transformers.py \
+    --model_path path \
+    --image_paths image1_path \
+    --question "your question"
 ```
 
 
