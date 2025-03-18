@@ -8,8 +8,7 @@
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/math_r1v.gif" width="60%" alt="math_r1v" />
 </div>
 
-<font size=7><div align='center' > [📖Technical Report][https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf]</div></font>
-
+<font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)] [[🤗 Hugging Face](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
 
 ## 1. Model Downloads
 
