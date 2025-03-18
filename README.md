@@ -2,7 +2,9 @@
 <!-- markdownlint-disable html -->
 <!-- markdownlint-disable no-duplicate-header -->
 
-# Skywork-R1V：Bridging Vision and Language for Advanced Multimodal Reasoning
+# Skywork-R1V
+
+**Feature**: Support Multimodal Reasoning, Just Like GPT4o1.
 
 
 <div align="center">
