@@ -9,10 +9,10 @@
   <table>
     <tr>
       <td>
-        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/math_r1v.gif" width="300" height="200" alt="math_r1v" />
+        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/math_r1v.gif" width="450" height="400" alt="math_r1v" />
       </td>
       <td>
-        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/Chemistry_cn.gif" width="300" height="200" alt="chemistry_1" />
+        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/Chemistry_cn.gif" width="450" height="400" alt="chemistry_1" />
       </td>
     </tr>
   </table>
