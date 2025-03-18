@@ -257,7 +257,7 @@ pip install -r requirements.txt
 pip install flash-attn --no-build-isolation
 ```
 
-#### 3. Run the Inference Script
+### 3. Run the Inference Script
 
 ```shell
 CUDA_VISIBLE_DEVICES="0,1" python inference_with_transformers.py \
