@@ -2,7 +2,7 @@
 <!-- markdownlint-disable html -->
 <!-- markdownlint-disable no-duplicate-header -->
 
-# Skywork-R1V
+# Skywork-R1V：Bridging Vision and Language for Advanced Multimodal Reasoning
 
 <div align="center">
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/logo.jpeg" width="60%" alt="skywork-r1v" />
