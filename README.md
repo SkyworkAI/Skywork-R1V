@@ -10,13 +10,6 @@
 
 <font size=7><div align='center' > [📖Technical Report][https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf]</div></font>
 
-## Table of Contents
-
-1. [Model Downloads](#1-model-downloads)
-2. [Evaluation Results](#2-evaluation-results)
-3. [How to Run Locally](#3-how-to-run-locally)
-4. [License](#4-license)
-5. [Citation](#5-citation)
 
 ## 1. Model Downloads
 
@@ -29,9 +22,6 @@
 </div>
 
 ## 2. Evaluation Results
-<div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
-</div>
 
 <div align="center">
   <b>Evaluation results of state-of-the-art LLMs and VLMs</b>
@@ -234,6 +224,9 @@
   </tbody>
 </table>
 
+<div align="center">
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
+</div>
 
 ## 3. How to Run Locally
 
