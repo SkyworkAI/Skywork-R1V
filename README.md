@@ -12,52 +12,13 @@
 
 ## Table of Contents
 
-1. [Introduction](#1-introduction)
-2. [Model Summary](#2-model-summary)
-3. [Model Downloads](#3-model-downloads)
-4. [Evaluation Results](#4-evaluation-results)
-5. [How to Run Locally](#5-how-to-run-locally)
-6. [License](#6-license)
-7. [Citation](#7-citation)
+1. [Model Downloads](#1-model-downloads)
+2. [Evaluation Results](#2-evaluation-results)
+3. [How to Run Locally](#3-how-to-run-locally)
+4. [License](#4-license)
+5. [Citation](#5-citation)
 
-## 1. Introduction
-
-We introduce Skywork-R1V, a multimodal reasoning model that extends the R1-series text models to visual modalities through a near-lossless transfer method. Using a lightweight visual projector, Skywork-R1V enables seamless multimodal adaptation without requiring retraining of either the base language model or vision encoder. To enhance visual-text alignment, we developed a hybrid optimization strategy combining Iterative Supervised Fine-Tuning (SFT) with Group Relative Policy Optimization (GRPO), significantly improving cross-modal integration. Additionally, we created an adaptive-length Chain-of-Thought distillation approach for generating reasoning data, which dynamically optimizes reasoning chain lengths to improve inference efficiency and prevent overthinking. The model achieves good performance on key multimodal reasoning benchmarks, scoring 69.0 on MMMU and 67.5 on MathVista, comparable to leading closed-source models like Gemini 2.0 and Kimi-k1.5. It also maintains strong textual reasoning capabilities, achieving impressive scores of 72.0 on AIME and 94.0 on MATH500. 
-
-## 2. Model Summary
-
-****Architecture:**** 
-
-Skywork-R1V employs a modular architecture that efficiently combines vision and language capabilities:
-
-- Vision Encoder: Uses Vision Transformer (ViT) as the visual backbone to process image inputs.
-- Visual Projector: A lightweight MLP (multilayer perceptron) adapter that serves as the bridge between the vision and language components.
-- Language Model: Utilizes R1-distilled-Qwen-32B as the reasoning-capable language model backbone.
-
-The model follows a connection pattern of Vision Encoder → MLP Adapter → Language Model, where the MLP adapter aligns the output space of the vision encoder with the input space of the language model. This design allows for efficient transfer of reasoning capabilities from text to multimodal domains without requiring extensive retraining of either the vision encoder or language model.
-
- ****Methodology****
-
-_Efficient Multimodal Transfer of Reasoning-Capable LLMs：_
-A staged alignment approach that efficiently transfers reasoning capabilities from text to vision by first connecting a vision encoder to a substitute LLM before transferring to the reasoning-capable LLM, preserving reasoning abilities while minimizing data requirements.
-- The MLP adapter is first trained to align the ViT with a substitute LLM (Qwen-32B-Instruct) using 2M samples of SFT data, while keeping both the vision encoder and language model frozen.
-- The trained MLP is then transferred to connect the ViT with the reasoning-capable LLM (R1-distilled-Qwen-32B).
-- Fine-tuning only the MLP parameters while keeping the vision encoder and language model frozen, ensuring preservation of reasoning capabilities while effectively aligning visual and textual representations.
-
-_Hybrid Optimization Framework：_
-A multi-stage training strategy combining iterative supervised fine-tuning with reinforcement learning that progressively improves model performance through error correction and reward-based optimization.
-- Initial supervised fine-tuning (SFT) using the complete dataset.
-- Iterative training with customized data. A reward model evaluates data quality and selects high-scoring samples. 
-- Reinforcement learning using Group Relative Policy Optimization (GRPO) with a rule-based reward system (accuracy and format rewards) to enhance generalizability.
-
-_Adaptive-Length Chain-of-Thought Distillation:_ 
-The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to generate high-quality reasoning-oriented training data
-- Evaluates image-text pairs through vision and text scoring.
-- Determines required depth of cross-modal integration.
-- Adaptively regulates reasoning chain length based on query complexity.
-- Progressive refinement of reasoning processes with external evaluation and correction when needed.
-
-## 3. Model Downloads
+## 1. Model Downloads
 
 <div align="center">
 
@@ -67,7 +28,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
 
 </div>
 
-## 4. Evaluation Results
+## 2. Evaluation Results
 <div align="center">
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
 </div>
@@ -274,7 +235,7 @@ The model uses Adaptive-Length Chain-of-Thought Distillation (AL-CoTD) to genera
 </table>
 
 
-## 5. How to Run Locally
+## 3. How to Run Locally
 
 ```python
 import math
@@ -404,7 +365,7 @@ response, history = model.chat(tokenizer, pixel_values, question, generation_con
 print(f'User: {question}\nAssistant: {response}')
 ```
 
-## 6. License
+## 4. License
 This code repository is licensed under [the MIT License](LICENSE-CODE). 
 ✅ Commercial use permitted
 
@@ -415,7 +376,7 @@ This code repository is licensed under [the MIT License](LICENSE-CODE).
 ❌ No liability
 
 
-## 7. Citation
+## 5. Citation
 If you use Skywork-R1V in your research, please cite:
 
 ```
