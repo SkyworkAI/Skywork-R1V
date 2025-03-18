@@ -5,7 +5,7 @@
 # Skywork-R1V：Bridging Vision and Language for Advanced Multimodal Reasoning
 
 <div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/logo.jpeg" width="60%" alt="skywork-r1v" />
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/math_r1v.gif" width="60%" alt="math_r1v" />
 </div>
 
 <font size=7><div align='center' > [[📖Technical Report][https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf]</div></font>
