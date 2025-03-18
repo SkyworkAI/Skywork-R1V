@@ -282,7 +282,7 @@ If you use Skywork-R1V in your research, please cite:
 
 ```
 @article{skywork2025r1v,
-  title     = {Skywork R1V: Bridging Vision and Language for Advanced Multimodal Reasoning},
+  title     = {Skywork R1V: Pioneering Multimodal Reasoning with Chain-of-Thought},
   author    = {Yi Peng, Chris, Xiaokun Wang, Yichen Wei, Jiangbo Pei, Weijie Qiu, Ai Jian, Yunzhuo Hao, Jiachun Pan, Tianyidan Xie, Li Ge, Rongxian Zhuang, Xuchen Song, Yang Liu, Yahui Zhou},
   year      = {2025},
   journal   = {https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V.pdf},
