@@ -1,0 +1,4 @@
+torch>=2
+pillow
+torchvision>=0.15
+transformers==4.37.2
