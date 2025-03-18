@@ -4,7 +4,9 @@
 
 # Skywork-R1V
 
-**Feature**: Support Multimodal Reasoning, Just Like GPT4o1.
+## 🔥News
+**Mar 18, 2025**: We are thrilled to introduce Skywork R1V, the first industry open-sourced multimodal reasoning model with advanced visual chain-of-thought capabilities, pushing the boundaries of AI-driven vision and logical inference! 🚀
+
 
 
 <div align="center">
@@ -22,8 +24,10 @@
 
 <font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V.pdf)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
 
-## Evaluation 
+## Feature
+Support Multimodal Reasoning, Just Like GPT4o1.
 
+## Evaluation 
 <br>
 <br>
 <div align="center">
