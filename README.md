@@ -11,7 +11,8 @@
 <font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
 
 ## 1. Evaluation Results
-
+<br>
+<br>
 <div align="center">
   <b>Evaluation results of state-of-the-art LLMs and VLMs</b>
 </div>
@@ -145,6 +146,8 @@
   </tbody>
 </table>
 
+<br>
+<br>
 <div align="center">
   <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
 </div>
