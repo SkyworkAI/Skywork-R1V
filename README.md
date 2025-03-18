@@ -373,8 +373,6 @@ def split_model(model_path):
     device_map[f'language_model.model.layers.{num_layers - 1}'] = 0
     return device_map
 
-# If you set `load_in_8bit=True`, you will need one 80GB GPUs.
-# If you set `load_in_8bit=False`, you will need at least two 80GB GPUs.
 path = 'Skywork/Skywork-R1V-38B'
 device_map = split_model(path)
 model = AutoModel.from_pretrained(
