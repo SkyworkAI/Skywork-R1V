@@ -11,16 +11,16 @@
   <table>
     <tr>
       <td>
-        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/math_r1v.gif" width="450" height="400" alt="math_r1v" />
+        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/math_r1v.gif" width="450" height="400" alt="math_r1v" />
       </td>
       <td>
-        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/Chemistry_cn.gif" width="450" height="400" alt="chemistry_1" />
+        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/Chemistry_cn.gif" width="450" height="400" alt="chemistry_1" />
       </td>
     </tr>
   </table>
 </div>
 
-<font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
+<font size=7><div align='center' > [[📖Technical Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V.pdf)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] </div></font>
 
 ## Evaluation 
 
@@ -231,7 +231,7 @@
 </table>
 
 <div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
 </div>
 
 ## How to Run Locally
@@ -277,7 +277,7 @@ If you use Skywork-R1V in your research, please cite:
   title     = {Skywork R1V: Bridging Vision and Language for Advanced Multimodal Reasoning},
   author    = {Yi Peng, Chris, Xiaokun Wang, Yichen Wei, Jiangbo Pei, Weijie Qiu, Ai Jian, Yunzhuo Hao, Jiachun Pan, Tianyidan Xie, Li Ge, Rongxian Zhuang, Xuchen Song, Yang Liu, Yahui Zhou},
   year      = {2025},
-  journal   = {https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V.pdf},
+  journal   = {https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V.pdf},
   url       = {https://huggingface.co/Skywork/Skywork-R1V-38B}
 }
 ```
