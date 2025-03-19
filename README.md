@@ -253,8 +253,9 @@ cd skywork-r1v/inference
 ### 2. Set Up the Environment
 
 ```shell
-pip install -r requirements.txt
-pip install flash-attn --no-build-isolation
+conda create -n r1-v python=3.10
+conda activate r1-v
+bash setup.sh
 ```
 
 ### 3. Run the Inference Script
