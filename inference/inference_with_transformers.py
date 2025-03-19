@@ -23,7 +23,7 @@ def main():
     ).eval()
     tokenizer = AutoTokenizer.from_pretrained(args.model_path, trust_remote_code=True, use_fast=False)
 
-    pixel_values = [load_image(img_path, max_num=12).to(torch.bfloat16).cuda() for img_path in args.image_path]
+    pixel_values = [load_image(img_path, max_num=12).to(torch.bfloat16).cuda() for img_path in args.image_paths]
     if len(pixel_values) > 1:
         pixel_values = torch.cat(pixel_values, dim=0)
         num_patches_list = [img.size(0) for img in pixel_values]
@@ -31,7 +31,7 @@ def main():
         pixel_values = pixel_values[0]
         num_patches_list = None
         
-    prompt = "<image>\n"*len(pixel_values) + args.question
+    prompt = "<image>\n"*len(args.image_paths) + args.question
     generation_config = dict(max_new_tokens=64000, do_sample=True, temperature=0.6, top_p=0.95, repetition_penalty=1.05)
     response = model.chat(tokenizer, pixel_values, prompt, generation_config, num_patches_list=num_patches_list)
 
