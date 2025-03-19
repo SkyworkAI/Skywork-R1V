@@ -23,7 +23,7 @@ def main():
     ).eval()
     tokenizer = AutoTokenizer.from_pretrained(args.model_path, trust_remote_code=True, use_fast=False)
 
-    pixel_values = [load_image(img_path, max_num=12).to(torch.bfloat16).cuda() for img_path in args.image_path]
+    pixel_values = [load_image(img_path, max_num=12).to(torch.bfloat16).cuda() for img_path in args.image_paths]
     if len(pixel_values) > 1:
         pixel_values = torch.cat(pixel_values, dim=0)
         num_patches_list = [img.size(0) for img in pixel_values]
