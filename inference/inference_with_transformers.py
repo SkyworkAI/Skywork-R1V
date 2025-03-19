@@ -25,8 +25,8 @@ def main():
 
     pixel_values = [load_image(img_path, max_num=12).to(torch.bfloat16).cuda() for img_path in args.image_paths]
     if len(pixel_values) > 1:
-        pixel_values = torch.cat(pixel_values, dim=0)
         num_patches_list = [img.size(0) for img in pixel_values]
+        pixel_values = torch.cat(pixel_values, dim=0)
     else:
         pixel_values = pixel_values[0]
         num_patches_list = None
