@@ -253,7 +253,7 @@ cd skywork-r1v/inference
 ### 2. Set Up the Environment
 
 ```shell
-pip install -r requirements.txt
+pip install -r requirement.txt
 pip install flash-attn --no-build-isolation
 ```
 
