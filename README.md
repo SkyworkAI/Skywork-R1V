@@ -32,12 +32,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 - **Cross-Modal Understanding**: Seamlessly integrates text and images for richer, context-aware comprehension.
 
 ## Evaluation 
-<br>
-<br>
-<div align="center">
-  <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
-</div>
-
 <div align="center">
   <b>Evaluation results of state-of-the-art LLMs and VLMs</b>
 </div>
@@ -186,7 +180,10 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 </table>
 
 
-
+<br></br>
+<div align="center">
+  <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
+</div>
 <div align="center">
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
 </div>
