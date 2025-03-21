@@ -118,7 +118,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>Kimi k1.5</td>
-      <td align="center">80B</td>
+      <td align="center">-</td>
       <td align="center">✅</td>
       <td align="center">96.2</td>
       <td align="center">77.5</td>
