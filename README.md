@@ -38,73 +38,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
   <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
 </div>
 
-<table align="center">
-  <thead>
-    <tr>
-      <th></th>
-      <th align="center"><strong>Benchmark</strong></th>
-      <th align="center"><strong>LLM</strong></th>
-      <th align="center" colspan="4"><strong>VLM</strong></th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th align="center"><strong>QwQ-32B-Preview</strong></th>
-      <th align="center"><strong>InternVL-2.5-38B</strong></th>
-      <th align="center"><strong>VILA 1.5-40B</strong></th>
-      <th align="center"><strong>InternVL2-40B</strong></th>
-      <th align="center"><strong>Skywork-R1V-38B</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="3">Reasoning</td>
-      <td>MATH-500</td>
-      <td align="center">90.6</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>94.0</strong></td>
-    </tr>
-    <tr>
-      <td>AIME 2024</td>
-      <td align="center">50.0</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>72.0</strong></td>
-    </tr>
-    <tr>
-      <td>GPQA</td>
-      <td align="center">54.5</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>61.6</strong></td>
-    </tr>
-    <tr>
-      <td rowspan="3">Vision</td>
-      <td>MathVista(mini)</td>
-      <td align="center">-</td>
-      <td align="center">71.9</td>
-      <td align="center">49.5</td>
-      <td align="center">63.7</td>
-      <td align="center">67.5</td>
-    </tr>
-    <tr>
-      <td>MMMU(Val)</td>
-      <td align="center">-</td>
-      <td align="center">63.9</td>
-      <td align="center">55.1</td>
-      <td align="center">55.2</td>
-      <td align="center"><strong>69.0</strong></td>
-    </tr>
-  </tbody>
-</table>
-
-
-<br>
-<br>
 <div align="center">
   <b>Evaluation results of state-of-the-art LLMs and VLMs</b>
 </div>
@@ -112,12 +45,14 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
   <thead>
     <tr>
       <th></th>
+      <th align="center"><strong>Size</strong></th>
       <th align="center"><strong>Vision</strong></th>
       <th align="center" colspan="3"><strong>Reasoning</strong></th>
       <th align="center" colspan="3"><strong>Vision</strong></th>
     </tr>
     <tr>
       <th></th>
+      <th align="center"></th>
       <th></th>
       <th align="center"><strong>MATH-500</strong></th>
       <th align="center"><strong>AIME 2024</strong></th>
@@ -127,6 +62,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <th></th>
+      <th align="center"></th>
       <th></th>
       <th align="center">pass@1</th>
       <th align="center">pass@1</th>
@@ -138,6 +74,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
   <tbody>
     <tr>
       <td>Qwen2.5-72B-Instruct</td>
+      <td align="center">72B</td>
       <td align="center">❌</td>
       <td align="center">80.0</td>
       <td align="center">23.3</td>
@@ -147,6 +84,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>Deepseek V3</td>
+      <td align="center">671B</td>
       <td align="center">❌</td>
       <td align="center">90.2</td>
       <td align="center">39.2</td>
@@ -156,6 +94,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>Deepseek R1</td>
+      <td align="center">671B</td>
       <td align="center">❌</td>
       <td align="center">97.3</td>
       <td align="center">79.8</td>
@@ -165,6 +104,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>Claude 3.5 Sonnet</td>
+      <td align="center">-</td>
       <td align="center">✅</td>
       <td align="center">78.3</td>
       <td align="center">16.0</td>
@@ -174,6 +114,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>GPT-4o</td>
+      <td align="center">-</td>
       <td align="center">✅</td>
       <td align="center">74.6</td>
       <td align="center">9.3</td>
@@ -183,6 +124,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>Kimi k1.5</td>
+      <td align="center">80B</td>
       <td align="center">✅</td>
       <td align="center">96.2</td>
       <td align="center">77.5</td>
@@ -192,6 +134,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>Qwen2.5-VL-72B-Instruct</td>
+      <td align="center">72B</td>
       <td align="center">✅</td>
       <td align="center">-</td>
       <td align="center">-</td>
@@ -201,6 +144,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>LLaVA-Onevision-72B</td>
+      <td align="center">72B</td>
       <td align="center">✅</td>
       <td align="center">-</td>
       <td align="center">-</td>
@@ -210,6 +154,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>InternVL2-Llama3-76B</td>
+      <td align="center">76B</td>
       <td align="center">✅</td>
       <td align="center">-</td>
       <td align="center">-</td>
@@ -219,6 +164,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
     <tr>
       <td>InternVL2.5-78B</td>
+      <td align="center">78B</td>
       <td align="center">✅</td>
       <td align="center">-</td>
       <td align="center">-</td>
@@ -227,7 +173,8 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
       <td align="center">70.1</td>
     </tr>
     <tr>
-      <td>Skywork-R1V-38B</td>
+      <td><strong>Skywork-R1V-38B</strong></td>
+      <td align="center"><strong>38B</strong></td>
       <td align="center">✅</td>
       <td align="center">94.0</td>
       <td align="center">72.0</td>
@@ -237,6 +184,8 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
   </tbody>
 </table>
+
+
 
 <div align="center">
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/eval.jpeg" width="80%" alt="skywork_r1v_eval" />
