@@ -269,7 +269,7 @@ CUDA_VISIBLE_DEVICES="0,1" python inference_with_transformers.py \
 
 
 ## License
-This code repository is licensed under [the MIT License](LICENSE-CODE). 
+This code repository is licensed under [the MIT License](https://github.com/SkyworkAI/Skywork-R1V/blob/main/LICENSE). 
 ✅ Commercial use permitted
 
 ✅ Modification allowed
