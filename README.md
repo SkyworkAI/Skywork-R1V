@@ -291,3 +291,12 @@ If you use Skywork-R1V in your research, please cite:
   url       = {https://huggingface.co/Skywork/Skywork-R1V-38B}
 }
 ```
+
+## Star History
+<a href="https://www.star-history.com/#SkyworkAI/Skywork-R1V&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=SkyworkAI/Skywork-R1V&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=SkyworkAI/Skywork-R1V&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=SkyworkAI/Skywork-R1V&type=Date" />
+ </picture>
+</a>
