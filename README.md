@@ -182,10 +182,18 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 <br></br>
 <div align="center">
-  <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
+  <b>Comparison with Larger-Scale Closed-Source Models</b>
 </div>
 <div align="center">
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/comparsion.png" width="100%" alt="skywork_r1v_eval" />
+</div>
+
+<br></br>
+<div align="center">
+  <b>Comparison with Larger-Scale Open-Source Models</b>
+</div>
+<div align="center">
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v_comp.png" width="100%" alt="skywork_r1v_eval" />
 </div>
 
 ## How to Run Locally
