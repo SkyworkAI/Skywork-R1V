@@ -195,6 +195,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
       <th></th>
       <th></th>
       <th align="center"><strong>QwQ-32B-Preview</strong></th>
+      <th align="center"><strong>QwenVL-2-72B</strong></th>
       <th align="center"><strong>InternVL-2.5-38B</strong></th>
       <th align="center"><strong>VILA 1.5-40B</strong></th>
       <th align="center"><strong>InternVL2-40B</strong></th>
@@ -209,11 +210,13 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">-</td>
       <td align="center"><strong>94.0</strong></td>
     </tr>
     <tr>
       <td>AIME 2024</td>
       <td align="center">50.0</td>
+      <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
@@ -225,12 +228,14 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
       <td align="center">-</td>
       <td align="center">-</td>
       <td align="center">-</td>
+      <td align="center">-</td>
       <td align="center"><strong>61.6</strong></td>
     </tr>
     <tr>
       <td rowspan="3">Vision</td>
       <td>MathVista(mini)</td>
       <td align="center">-</td>
+      <td align="center">70.5</td>
       <td align="center"><strong>71.9</strong></td>
       <td align="center">49.5</td>
       <td align="center">63.7</td>
@@ -239,6 +244,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     <tr>
       <td>MMMU(Val)</td>
       <td align="center">-</td>
+      <td align="center">64.5</td>
       <td align="center">63.9</td>
       <td align="center">55.1</td>
       <td align="center">55.2</td>
