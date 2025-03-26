@@ -32,6 +32,81 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 - **Cross-Modal Understanding**: Seamlessly integrates text and images for richer, context-aware comprehension.
 
 ## Evaluation 
+
+<div align="center">
+  <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
+</div>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th></th>
+      <th align="center"><strong>Benchmark</strong></th>
+      <th align="center"><strong>LLM</strong></th>
+      <th align="center" colspan="4"><strong>VLM</strong></th>
+    </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th align="center"><strong>QwQ-32B-Preview</strong></th>
+      <th align="center"><strong>QwenVL-2-72B</strong></th>
+      <th align="center"><strong>InternVL-2.5-38B</strong></th>
+      <th align="center"><strong>VILA 1.5-40B</strong></th>
+      <th align="center"><strong>InternVL2-40B</strong></th>
+      <th align="center"><strong>Skywork-R1V-38B</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="3">Reasoning</td>
+      <td>MATH-500</td>
+      <td align="center">90.6</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center"><strong>94.0</strong></td>
+    </tr>
+    <tr>
+      <td>AIME 2024</td>
+      <td align="center">50.0</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center"><strong>72.0</strong></td>
+    </tr>
+    <tr>
+      <td>GPQA</td>
+      <td align="center">54.5</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center">-</td>
+      <td align="center"><strong>61.6</strong></td>
+    </tr>
+    <tr>
+      <td rowspan="3">Vision</td>
+      <td>MathVista(mini)</td>
+      <td align="center">-</td>
+      <td align="center">70.5</td>
+      <td align="center"><strong>71.9</strong></td>
+      <td align="center">49.5</td>
+      <td align="center">63.7</td>
+      <td align="center">67.5</td>
+    </tr>
+    <tr>
+      <td>MMMU(Val)</td>
+      <td align="center">-</td>
+      <td align="center">64.5</td>
+      <td align="center">63.9</td>
+      <td align="center">55.1</td>
+      <td align="center">55.2</td>
+      <td align="center"><strong>69.0</strong></td>
+    </tr>
+  </tbody>
+</table>
+
 <div align="center">
   <b>Evaluation results of state-of-the-art LLMs and VLMs</b>
 </div>
@@ -175,80 +250,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
       <td align="center">61.6</td>
       <td align="center">67.5</td>
       <td align="center">69.0</td>
-    </tr>
-  </tbody>
-</table>
-
-<div align="center">
-  <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
-</div>
-
-<table align="center">
-  <thead>
-    <tr>
-      <th></th>
-      <th align="center"><strong>Benchmark</strong></th>
-      <th align="center"><strong>LLM</strong></th>
-      <th align="center" colspan="4"><strong>VLM</strong></th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th align="center"><strong>QwQ-32B-Preview</strong></th>
-      <th align="center"><strong>QwenVL-2-72B</strong></th>
-      <th align="center"><strong>InternVL-2.5-38B</strong></th>
-      <th align="center"><strong>VILA 1.5-40B</strong></th>
-      <th align="center"><strong>InternVL2-40B</strong></th>
-      <th align="center"><strong>Skywork-R1V-38B</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="3">Reasoning</td>
-      <td>MATH-500</td>
-      <td align="center">90.6</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>94.0</strong></td>
-    </tr>
-    <tr>
-      <td>AIME 2024</td>
-      <td align="center">50.0</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>72.0</strong></td>
-    </tr>
-    <tr>
-      <td>GPQA</td>
-      <td align="center">54.5</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>61.6</strong></td>
-    </tr>
-    <tr>
-      <td rowspan="3">Vision</td>
-      <td>MathVista(mini)</td>
-      <td align="center">-</td>
-      <td align="center">70.5</td>
-      <td align="center"><strong>71.9</strong></td>
-      <td align="center">49.5</td>
-      <td align="center">63.7</td>
-      <td align="center">67.5</td>
-    </tr>
-    <tr>
-      <td>MMMU(Val)</td>
-      <td align="center">-</td>
-      <td align="center">64.5</td>
-      <td align="center">63.9</td>
-      <td align="center">55.1</td>
-      <td align="center">55.2</td>
-      <td align="center"><strong>69.0</strong></td>
     </tr>
   </tbody>
 </table>
