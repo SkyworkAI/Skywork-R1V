@@ -7,6 +7,8 @@
 
 Welcome to the Skywork-R1V repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and logical thinking.
 ## 🔥News
+**April 1, 2025**: Skywork-R1V supports inference with [[vLLM](https://github.com/vllm-project/vllm)].
+
 **Mar 26, 2025**: We released awq quantized version of Skywork R1V[[🤗 Skywork-R1V-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V-38B-AWQ)], supporting single-card (above 30GB) inference.
 
 **Mar 18, 2025**: We are thrilled to introduce Skywork R1V, the first industry open-sourced multimodal reasoning model with advanced visual chain-of-thought capabilities, pushing the boundaries of AI-driven vision and logical inference! 🚀
@@ -297,6 +299,34 @@ CUDA_VISIBLE_DEVICES="0,1" python inference_with_transformers.py \
     --question "your question"
 ```
 
+## How to Run Locally with vLLM
+
+### 1. Set Up the Environment
+Refer to vLLM's installation from the source. https://docs.vllm.ai/en/latest/getting_started/installation/gpu.html
+```shell
+conda create -n r1v-vllm python=3.12
+conda activate r1v-vllm
+pip install pillow==11.1.0
+git clone https://github.com/vllm-project/vllm.git
+cd vllm
+pip install -e . 
+```
+### 2. Clone the Repository
+
+```shell
+git clone https://github.com/SkyworkAI/Skywork-R1V.git
+cd skywork-r1v/inference
+```
+
+### 3. Run the Inference Script
+
+```shell
+python inference_with_vllm.py \
+    --model_path path \
+    --image_paths image1_path image2_path \
+    --question "your question" \
+    --tensor_parallel_size 4
+```
 
 ## License
 This code repository is licensed under [the MIT License](https://github.com/SkyworkAI/Skywork-R1V/blob/main/LICENSE). 
