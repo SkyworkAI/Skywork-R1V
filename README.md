@@ -345,11 +345,14 @@ This code repository is licensed under [the MIT License](https://github.com/Skyw
 If you use Skywork-R1V in your research, please cite:
 
 ```
-@article{skywork2025r1v,
-  title     = {Skywork R1V: Pioneering Multimodal Reasoning with Chain-of-Thought},
-  author    = {Yi Peng, Chris, Xiaokun Wang, Yichen Wei, Jiangbo Pei, Weijie Qiu, Ai Jian, Yunzhuo Hao, Jiachun Pan, Tianyidan Xie, Li Ge, Rongxian Zhuang, Xuchen Song, Yang Liu, Yahui Zhou},
-  year      = {2025},
-  journal   = {arXiv preprint arXiv:2504.05599},
+@misc{peng2025skyworkr1vpioneeringmultimodal,
+      title={Skywork R1V: Pioneering Multimodal Reasoning with Chain-of-Thought}, 
+      author={Yi Peng and Chris and Xiaokun Wang and Yichen Wei and Jiangbo Pei and Weijie Qiu and Ai Jian and Yunzhuo Hao and Jiachun Pan and Tianyidan Xie and Li Ge and Rongxian Zhuang and Xuchen Song and Yang Liu and Yahui Zhou},
+      year={2025},
+      eprint={2504.05599},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2504.05599}, 
 }
 ```
 
