@@ -34,8 +34,12 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 
 ## R1V2-38B Evaluation
+Skywork-R1V2-38B demonstrates state-of-the-art performance on both text and multimodal reasoning tasks.
+<br></br>
+
+
 <div align="center">
-  <b>Comparison of Skywork-R1V2 with Leading Open-Source and Closed-Source Models</b>
+  <b>Comparison of Skywork-R1V2 with Leading Open-Source and Proprietary Models</b>
 </div>
 
 <table align="center">
@@ -147,6 +151,30 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
   </tbody>
 </table>
 
+
+<br></br>
+<div align="center">
+  <b>Text Reasoning Performance</b>
+</div>
+<div align="center">
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/text_reasoning.png?raw=true" width="100%" alt="text_reasoning" />
+</div>
+
+<br></br>
+<div align="center">
+  <b>Multimodal Reasoning vs Proprietary Models</b>
+</div>
+<div align="center">
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/multi_reasoning_pm.png?raw=true" width="100%" alt="multi_reasoning_pm" />
+</div>
+
+<br></br>
+<div align="center">
+  <b>Multimodal Reasoning vs Open-Source Models</b>
+</div>
+<div align="center">
+  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/multi_reasoning_osm.png?raw=true" width="100%" alt="multi_reasoning_osm" />
+</div>
 
 ## R1V-38B Evaluation 
 
