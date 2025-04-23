@@ -33,15 +33,147 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
   </table>
 </div>
 
-
-
-## Feature
-- **Visual Chain-of-Thought**: Enables multi-step logical reasoning on visual inputs, breaking down complex image-based problems into manageable steps.
-- **Mathematical & Scientific Analysis**: Capable of solving visual math problems and interpreting scientific/medical imagery with high precision.
-- **Cross-Modal Understanding**: Seamlessly integrates text and images for richer, context-aware comprehension.
-
-## Evaluation 
-
+## R1V2-38B Evaluation
+ Skywork-R1V2-38B demonstrates state-of-the-art performance on both text and multimodal reasoning tasks.
+ <div align="center">
+   <b>Comparison of Skywork-R1V2 with Leading Open-Source and Proprietary Models</b>
+ </div>
+ 
+ <table align="center">
+   <thead>
+     <tr>
+       <th rowspan="2">Model</th>
+       <th rowspan="2">Vision Support</th>
+       <th colspan="5" align="center"><strong>Text Reasoning (pass@1 or %)</strong></th>
+       <th colspan="5" align="center"><strong>Multimodal Reasoning (%)</strong></th>
+     </tr>
+     <tr>
+       <th>AIME24</th>
+       <th>LiveCodebench</th>
+       <th>liveBench</th>
+       <th>IFEVAL</th>
+       <th>BFCL</th>
+       <th>MMMU(val)</th>
+       <th>MathVista(mini)</th>
+       <th>MathVision(mini)</th>
+       <th>OlympiadBench</th>
+       <th>mmmu-pro</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td><strong>Skywork-R1V2-38B</strong></td>
+       <td align="center">✅</td>
+       <td align="center"><strong>78.9</strong></td>
+       <td align="center"><strong>63.6</strong></td>
+       <td align="center"><strong>73.2</strong></td>
+       <td align="center"><strong>82.9</strong></td>
+       <td align="center"><strong>66.3</strong></td>
+       <td align="center"><strong>73.6</strong></td>
+       <td align="center"><strong>74.0</strong></td>
+       <td align="center"><strong>49.0</strong></td>
+       <td align="center"><strong>62.6</strong></td>
+       <td align="center"><strong>52.0</strong></td>
+     </tr>
+     <tr>
+       <td>OpenAI-4o</td>
+       <td align="center">✅</td>
+       <td align="center">74.6</td>
+       <td align="center">9.3</td>
+       <td align="center">49.9</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">69.1</td>
+       <td align="center">63.8</td>
+       <td align="center">58.0</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+     </tr>
+     <tr>
+       <td>Claude 3.5 Sonnet</td>
+       <td align="center">✅</td>
+       <td align="center">16.0</td>
+       <td align="center">—</td>
+       <td align="center">65.0</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">66.4</td>
+       <td align="center">65.3</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+     </tr>
+     <tr>
+       <td>Kimi k1.5</td>
+       <td align="center">✅</td>
+       <td align="center">77.5</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">70.0</td>
+       <td align="center">74.9</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+     </tr>
+     <tr>
+       <td>Qwen2.5-VL-72B</td>
+       <td align="center">✅</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">70.2</td>
+       <td align="center">74.8</td>
+       <td align="center">38.1</td>
+       <td align="center">40.4</td>
+       <td align="center">—</td>
+     </tr>
+     <tr>
+       <td>InternVL2.5-78B</td>
+       <td align="center">✅</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">—</td>
+       <td align="center">70.1</td>
+       <td align="center">72.3</td>
+       <td align="center">32.2</td>
+       <td align="center">31.1</td>
+       <td align="center">—</td>
+     </tr>
+   </tbody>
+ </table>
+ 
+ 
+ <br></br>
+ <div align="center">
+   <b>Text Reasoning Performance</b>
+ </div>
+ <div align="center">
+   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/text_reasoning.png?raw=true" width="100%" alt="text_reasoning" />
+ </div>
+ 
+ <br></br>
+ <div align="center">
+   <b>Multimodal Reasoning vs Proprietary Models</b>
+ </div>
+ <div align="center">
+   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/multi_reasoning_pm.png?raw=true" width="100%" alt="multi_reasoning_pm" />
+ </div>
+ 
+ <br></br>
+ <div align="center">
+   <b>Multimodal Reasoning vs Open-Source Models</b>
+ </div>
+ <div align="center">
+   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/multi_reasoning_osm.png?raw=true" width="100%" alt="multi_reasoning_osm" />
+ </div>
+ 
+ ## R1V-38B Evaluation  
 <div align="center">
   <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
 </div>
