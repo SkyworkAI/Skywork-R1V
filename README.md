@@ -7,7 +7,7 @@
 
 Welcome to the Skywork-R1V repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and logical thinking.
 ## 🔥News
-**April 24, 2025**: We released Skywork-R1V2, a state-of-the-art open-source multimodal reasoning model, featuring hybrid reinforcement optimization and leading performance across vision-language benchmarks![[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] 
+**April 24, 2025**: We released Skywork-R1V2, a state-of-the-art open-source multimodal reasoning model, leading performance across vision-language benchmarks![[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] 
 
 **April 9, 2025**: Our technical report is currently available on arxiv: [[Skywork-R1V: Pioneering Multimodal Reasoning with CoT](https://arxiv.org/abs/2504.05599)].
 
