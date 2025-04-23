@@ -5,20 +5,6 @@
 # Skywork-R1V: Pioneering Multimodal Reasoning with CoT
 <font size=7><div align='center' >  [[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] [[📖R1V1 Report](https://arxiv.org/abs/2504.05599)] [[🤖 R1V1 ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V-38B)]</div></font>
 
-Welcome to the Skywork-R1V repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and logical thinking.
-## 🔥News
-
- **April 24, 2025**: We released Skywork-R1V2, a state-of-the-art open-source multimodal reasoning model, leading performance across vision-language benchmarks![[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] 
- 
-**April 9, 2025**: Our technical report is currently available on arxiv: [[Skywork-R1V: Pioneering Multimodal Reasoning with CoT](https://arxiv.org/abs/2504.05599)].
-
-**April 1, 2025**: Skywork-R1V supports inference with [[vLLM](https://github.com/vllm-project/vllm)], On 4×L20Y GPUs, vLLM generates 1k tokens in ~12.3s, at least 5× faster than transformers.
-
-**Mar 26, 2025**: We released awq quantized version of Skywork R1V[[🤗 Skywork-R1V-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V-38B-AWQ)], supporting single-card (above 30GB) inference.
-
-**Mar 18, 2025**: We are thrilled to introduce Skywork R1V, the first industry open-sourced multimodal reasoning model with advanced visual chain-of-thought capabilities, pushing the boundaries of AI-driven vision and logical inference! 🚀
-
-
 
 <div align="center">
   <table>
@@ -32,6 +18,21 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
     </tr>
   </table>
 </div>
+Welcome to the Skywork-R1V repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and logical thinking.
+
+## 🔥News
+
+ **April 24, 2025**: We released Skywork-R1V2, a state-of-the-art open-source multimodal reasoning model, leading performance across vision-language benchmarks![[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] 
+ 
+**April 9, 2025**: Our technical report is currently available on arxiv: [[Skywork-R1V: Pioneering Multimodal Reasoning with CoT](https://arxiv.org/abs/2504.05599)].
+
+**April 1, 2025**: Skywork-R1V supports inference with [[vLLM](https://github.com/vllm-project/vllm)], On 4×L20Y GPUs, vLLM generates 1k tokens in ~12.3s, at least 5× faster than transformers.
+
+**Mar 26, 2025**: We released awq quantized version of Skywork R1V[[🤗 Skywork-R1V-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V-38B-AWQ)], supporting single-card (above 30GB) inference.
+
+**Mar 18, 2025**: We are thrilled to introduce Skywork R1V, the first industry open-sourced multimodal reasoning model with advanced visual chain-of-thought capabilities, pushing the boundaries of AI-driven vision and logical inference! 🚀
+
+
 
 ## R1V2-38B Evaluation
  Skywork-R1V2-38B demonstrates state-of-the-art performance on both text and multimodal reasoning tasks.
