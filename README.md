@@ -127,15 +127,15 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
        <td align="center">—</td>
      </tr>
      <tr>
-       <td>InternVL3-78B</td>
+       <td>InternVL3-38B</td>
        <td align="center">—</td>
        <td align="center">—</td>
        <td align="center">—</td>
        <td align="center">—</td>
        <td align="center">—</td>
-       <td align="center">72.2</td>
-       <td align="center">79.0</td>
-       <td align="center">43.1</td>
+       <td align="center">70.1</td>
+       <td align="center">75.1</td>
+       <td align="center">34.2</td>
        <td align="center">-</td>
        <td align="center">—</td>
      </tr>
