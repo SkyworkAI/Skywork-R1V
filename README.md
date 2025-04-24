@@ -69,7 +69,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
        <td align="center"><strong>82.9</strong></td>
        <td align="center"><strong>66.3</strong></td>
        <td align="center"><strong>73.6</strong></td>
-       <td align="center"><strong>74.0</strong></td>
+       <td align="center">74.0</td>
        <td align="center"><strong>49.0</strong></td>
        <td align="center"><strong>62.6</strong></td>
        <td align="center"><strong>52.0</strong></td>
