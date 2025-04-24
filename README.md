@@ -3,7 +3,7 @@
 <!-- markdownlint-disable no-duplicate-header -->
 
 # Skywork-R1V: Pioneering Multimodal Reasoning with CoT
-<font size=7><div align='center' >  [[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] [[📖R1V1 Report](https://arxiv.org/abs/2504.05599)] [[🤖 R1V1 ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V-38B)]</div></font>
+<font size=7><div align='center' >  [[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)]  [[📖R1V2 Report](https://arxiv.org/abs/2504.16656)] [[📖R1V1 Report](https://arxiv.org/abs/2504.05599)] [[🤖 R1V2 ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V2-38B)]</div></font>
 
 
 <div align="center">
@@ -37,14 +37,13 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 ## R1V2-38B Evaluation
  Skywork-R1V2-38B demonstrates state-of-the-art performance on both text and multimodal reasoning tasks.
  <div align="center">
-   <b>Comparison of Skywork-R1V2 with Leading Open-Source and Proprietary Models</b>
+   <b>Comparison of Skywork-R1V2 with Multimodal Open-Source and Proprietary Models</b>
  </div>
  
  <table align="center">
    <thead>
      <tr>
        <th rowspan="2">Model</th>
-       <th rowspan="2">Vision Support</th>
        <th colspan="5" align="center"><strong>Text Reasoning (pass@1 or %)</strong></th>
        <th colspan="5" align="center"><strong>Multimodal Reasoning (%)</strong></th>
      </tr>
@@ -64,7 +63,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
    <tbody>
      <tr>
        <td><strong>Skywork-R1V2-38B</strong></td>
-       <td align="center">✅</td>
        <td align="center"><strong>78.9</strong></td>
        <td align="center"><strong>63.6</strong></td>
        <td align="center"><strong>73.2</strong></td>
@@ -78,7 +76,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
      </tr>
      <tr>
        <td>OpenAI-4o</td>
-       <td align="center">✅</td>
        <td align="center">74.6</td>
        <td align="center">9.3</td>
        <td align="center">49.9</td>
@@ -92,7 +89,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
      </tr>
      <tr>
        <td>Claude 3.5 Sonnet</td>
-       <td align="center">✅</td>
        <td align="center">16.0</td>
        <td align="center">—</td>
        <td align="center">65.0</td>
@@ -106,7 +102,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
      </tr>
      <tr>
        <td>Kimi k1.5</td>
-       <td align="center">✅</td>
        <td align="center">77.5</td>
        <td align="center">—</td>
        <td align="center">—</td>
@@ -120,7 +115,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
      </tr>
      <tr>
        <td>Qwen2.5-VL-72B</td>
-       <td align="center">✅</td>
        <td align="center">—</td>
        <td align="center">—</td>
        <td align="center">—</td>
@@ -134,7 +128,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
      </tr>
      <tr>
        <td>InternVL2.5-78B</td>
-       <td align="center">✅</td>
        <td align="center">—</td>
        <td align="center">—</td>
        <td align="center">—</td>
@@ -174,244 +167,6 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
    <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/multi_reasoning_osm.png?raw=true" width="100%" alt="multi_reasoning_osm" />
  </div>
  
- ## R1V-38B Evaluation  
-<div align="center">
-  <b>Comparison with Larger-Scale Open-Source and Closed-Source Models</b>
-</div>
-
-<table align="center">
-  <thead>
-    <tr>
-      <th></th>
-      <th align="center"><strong>Benchmark</strong></th>
-      <th align="center"><strong>LLM</strong></th>
-      <th align="center" colspan="4"><strong>VLM</strong></th>
-    </tr>
-    <tr>
-      <th></th>
-      <th></th>
-      <th align="center"><strong>QwQ-32B-Preview</strong></th>
-      <th align="center"><strong>QwenVL-2-72B</strong></th>
-      <th align="center"><strong>InternVL-2.5-38B</strong></th>
-      <th align="center"><strong>VILA 1.5-40B</strong></th>
-      <th align="center"><strong>InternVL2-40B</strong></th>
-      <th align="center"><strong>Skywork-R1V-38B</strong></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="3">Reasoning</td>
-      <td>MATH-500</td>
-      <td align="center">90.6</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>94.0</strong></td>
-    </tr>
-    <tr>
-      <td>AIME 2024</td>
-      <td align="center">50.0</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>72.0</strong></td>
-    </tr>
-    <tr>
-      <td>GPQA</td>
-      <td align="center">54.5</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center"><strong>61.6</strong></td>
-    </tr>
-    <tr>
-      <td rowspan="3">Vision</td>
-      <td>MathVista(mini)</td>
-      <td align="center">-</td>
-      <td align="center">70.5</td>
-      <td align="center"><strong>71.9</strong></td>
-      <td align="center">49.5</td>
-      <td align="center">63.7</td>
-      <td align="center">67.5</td>
-    </tr>
-    <tr>
-      <td>MMMU(Val)</td>
-      <td align="center">-</td>
-      <td align="center">64.5</td>
-      <td align="center">63.9</td>
-      <td align="center">55.1</td>
-      <td align="center">55.2</td>
-      <td align="center"><strong>69.0</strong></td>
-    </tr>
-  </tbody>
-</table>
-
-<div align="center">
-  <b>Evaluation results of state-of-the-art LLMs and VLMs</b>
-</div>
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th align="center"><strong>Size</strong></th>
-      <th align="center"><strong>Vision</strong></th>
-      <th align="center" colspan="3"><strong>Reasoning</strong></th>
-      <th align="center" colspan="3"><strong>Vision</strong></th>
-    </tr>
-    <tr>
-      <th></th>
-      <th align="center"></th>
-      <th></th>
-      <th align="center"><strong>MATH-500</strong></th>
-      <th align="center"><strong>AIME 2024</strong></th>
-      <th align="center"><strong>GPQA</strong></th>
-      <th align="center"><strong>MathVista(mini)</strong></th>
-      <th align="center"><strong>MMMU(Val)</strong></th>
-    </tr>
-    <tr>
-      <th></th>
-      <th align="center"></th>
-      <th></th>
-      <th align="center">pass@1</th>
-      <th align="center">pass@1</th>
-      <th align="center">pass@1</th>
-      <th align="center">pass@1</th>
-      <th align="center">pass@1</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Qwen2.5-72B-Instruct</td>
-      <td align="center">72B</td>
-      <td align="center">❌</td>
-      <td align="center">80.0</td>
-      <td align="center">23.3</td>
-      <td align="center">49.0</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Deepseek V3</td>
-      <td align="center">671B</td>
-      <td align="center">❌</td>
-      <td align="center">90.2</td>
-      <td align="center">39.2</td>
-      <td align="center">59.1</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Deepseek R1</td>
-      <td align="center">671B</td>
-      <td align="center">❌</td>
-      <td align="center">97.3</td>
-      <td align="center">79.8</td>
-      <td align="center">71.5</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-    </tr>
-    <tr>
-      <td>Claude 3.5 Sonnet</td>
-      <td align="center">-</td>
-      <td align="center">✅</td>
-      <td align="center">78.3</td>
-      <td align="center">16.0</td>
-      <td align="center">65.0</td>
-      <td align="center">65.3</td>
-      <td align="center">66.4</td>
-    </tr>
-    <tr>
-      <td>GPT-4o</td>
-      <td align="center">-</td>
-      <td align="center">✅</td>
-      <td align="center">74.6</td>
-      <td align="center">9.3</td>
-      <td align="center">49.9</td>
-      <td align="center">63.8</td>
-      <td align="center">69.1</td>
-    </tr>
-    <tr>
-      <td>Kimi k1.5</td>
-      <td align="center">-</td>
-      <td align="center">✅</td>
-      <td align="center">96.2</td>
-      <td align="center">77.5</td>
-      <td align="center">-</td>
-      <td align="center">74.9</td>
-      <td align="center">70.0</td>
-    </tr>
-    <tr>
-      <td>Qwen2.5-VL-72B-Instruct</td>
-      <td align="center">72B</td>
-      <td align="center">✅</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">74.8</td>
-      <td align="center">70.2</td>
-    </tr>
-    <tr>
-      <td>LLaVA-Onevision-72B</td>
-      <td align="center">72B</td>
-      <td align="center">✅</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">67.5</td>
-      <td align="center">56.8</td>
-    </tr>
-    <tr>
-      <td>InternVL2-Llama3-76B</td>
-      <td align="center">76B</td>
-      <td align="center">✅</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">65.5</td>
-      <td align="center">62.7</td>
-    </tr>
-    <tr>
-      <td>InternVL2.5-78B</td>
-      <td align="center">78B</td>
-      <td align="center">✅</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">-</td>
-      <td align="center">72.3</td>
-      <td align="center">70.1</td>
-    </tr>
-    <tr>
-      <td><strong>Skywork-R1V-38B</strong></td>
-      <td align="center"><strong>38B</strong></td>
-      <td align="center">✅</td>
-      <td align="center">94.0</td>
-      <td align="center">72.0</td>
-      <td align="center">61.6</td>
-      <td align="center">67.5</td>
-      <td align="center">69.0</td>
-    </tr>
-  </tbody>
-</table>
-
-<br></br>
-<div align="center">
-  <b>Comparison with Larger-Scale Closed-Source Models</b>
-</div>
-<div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/comparsion.png" width="100%" alt="skywork_r1v_eval" />
-</div>
-
-<br></br>
-<div align="center">
-  <b>Comparison with Larger-Scale Open-Source Models</b>
-</div>
-<div align="center">
-  <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v_comp.png" width="100%" alt="skywork_r1v_eval" />
-</div>
-
 ## How to Run Locally
 
 ### 1. Clone the Repository
@@ -463,6 +218,17 @@ This code repository is licensed under [the MIT License](https://github.com/Skyw
 
 ## Citation
 If you use Skywork-R1V in your research, please cite:
+```
+@misc{chris2025skyworkr1v2multimodalhybrid,
+      title={Skywork R1V2: Multimodal Hybrid Reinforcement Learning for Reasoning}, 
+      author={Chris and Yichen Wei and Yi Peng and Xiaokun Wang and Weijie Qiu and Wei Shen and Tianyidan Xie and Jiangbo Pei and Jianhao Zhang and Yunzhuo Hao and Xuchen Song and Yang Liu and Yahui Zhou},
+      year={2025},
+      eprint={2504.16656},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2504.16656}, 
+}
+```
 
 ```
 @misc{peng2025skyworkr1vpioneeringmultimodal,
@@ -475,6 +241,3 @@ If you use Skywork-R1V in your research, please cite:
       url={https://arxiv.org/abs/2504.05599}, 
 }
 ```
-
-## Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=SkyworkAI/Skywork-R1V&type=Date)](https://www.star-history.com/#SkyworkAI/Skywork-R1V&Date)
