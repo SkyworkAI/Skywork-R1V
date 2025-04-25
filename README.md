@@ -3,7 +3,7 @@
 <!-- markdownlint-disable no-duplicate-header -->
 
 # Skywork-R1V: Pioneering Multimodal Reasoning with CoT
-<font size=7><div align='center' >  [[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)]  [[📖R1V2 Report](https://arxiv.org/abs/2504.16656)] [[📖R1V1 Report](https://arxiv.org/abs/2504.05599)] [[🤖 R1V2 ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V2-38B)]</div></font>
+<font size=7><div align='center' >  [[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[🤖 R1V2 ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V2-38B)] <br></br>[[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)]  [[📖R1V1 Report](https://arxiv.org/abs/2504.05599)] </div></font>
 
 
 <div align="center">
@@ -18,11 +18,13 @@
     </tr>
   </table>
 </div>
-Welcome to the Skywork-R1V repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and logical thinking.
+
+<br></br>
+Welcome to the Skywork-R1V repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and text thinking.
 
 ## 🔥News
 
- **April 24, 2025**: We released Skywork-R1V2, a state-of-the-art open-source multimodal reasoning model, leading performance across vision-language benchmarks![[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[📖R1V2 Report](https://arxiv.org/abs/2504.16656)] 
+ **April 24, 2025**: We released **Skywork-R1V2**, a state-of-the-art, open-source multimodal reasoning model that achieves leading performance across multiple vision-language benchmarks.[[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)]
  
 **April 9, 2025**: Our technical report is currently available on arxiv: [[Skywork-R1V: Pioneering Multimodal Reasoning with CoT](https://arxiv.org/abs/2504.05599)].
 
@@ -70,7 +72,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
        <td align="center"><strong>66.3</strong></td>
        <td align="center"><strong>73.6</strong></td>
        <td align="center">74.0</td>
-       <td align="center"><strong>49.0</strong></td>
+       <td align="center">49.0</td>
        <td align="center"><strong>62.6</strong></td>
        <td align="center"><strong>52.0</strong></td>
      </tr>
@@ -83,7 +85,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
        <td align="center">—</td>
        <td align="center">69.1</td>
        <td align="center">63.8</td>
-       <td align="center">58.0</td>
+       <td align="center"><strong>58.0</strong></td>
        <td align="center">—</td>
        <td align="center">—</td>
      </tr>
@@ -134,7 +136,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
        <td align="center">—</td>
        <td align="center">—</td>
        <td align="center">70.1</td>
-       <td align="center">75.1</td>
+       <td align="center"><strong>75.1</strong></td>
        <td align="center">34.2</td>
        <td align="center">-</td>
        <td align="center">—</td>
