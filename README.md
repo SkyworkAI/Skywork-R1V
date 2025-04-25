@@ -3,7 +3,7 @@
 <!-- markdownlint-disable no-duplicate-header -->
 
 # Skywork-R1V: Pioneering Multimodal Reasoning with CoT
-<font size=7><div align='center' >  [[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[🤖 R1V2 ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V2-38B)] [[📖R1V2 Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V2.pdf)] <br></br>[[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] [[📖R1V1 Report](https://arxiv.org/abs/2504.05599)] </div></font>
+<font size=7><div align='center' >  [[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[🤖 R1V2 ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V2-38B)] [[📖 R1V2 Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V2.pdf)] <br></br>[[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] [[📖 R1V1 Report](https://arxiv.org/abs/2504.05599)] </div></font>
 
 
 <div align="center">
