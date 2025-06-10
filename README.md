@@ -225,7 +225,7 @@ If you use Skywork-R1V in your research, please cite:
 ```
 @misc{chris2025skyworkr1v2multimodalhybrid,
       title={Skywork R1V2: Multimodal Hybrid Reinforcement Learning for Reasoning}, 
-      author={Chris and Yichen Wei and Yi Peng and Xiaokun Wang and Weijie Qiu and Wei Shen and Tianyidan Xie and Jiangbo Pei and Jianhao Zhang and Yunzhuo Hao and Xuchen Song and Yang Liu and Yahui Zhou},
+      author={Peiyu Wang and Yichen Wei and Yi Peng and Xiaokun Wang and Weijie Qiu and Wei Shen and Tianyidan Xie and Jiangbo Pei and Jianhao Zhang and Yunzhuo Hao and Xuchen Song and Yang Liu and Yahui Zhou},
       year={2025},
       eprint={2504.16656},
       archivePrefix={arXiv},
@@ -237,7 +237,7 @@ If you use Skywork-R1V in your research, please cite:
 ```
 @misc{peng2025skyworkr1vpioneeringmultimodal,
       title={Skywork R1V: Pioneering Multimodal Reasoning with Chain-of-Thought}, 
-      author={Yi Peng and Chris and Xiaokun Wang and Yichen Wei and Jiangbo Pei and Weijie Qiu and Ai Jian and Yunzhuo Hao and Jiachun Pan and Tianyidan Xie and Li Ge and Rongxian Zhuang and Xuchen Song and Yang Liu and Yahui Zhou},
+      author={Yi Peng and Peiyu Wang and Xiaokun Wang and Yichen Wei and Jiangbo Pei and Weijie Qiu and Ai Jian and Yunzhuo Hao and Jiachun Pan and Tianyidan Xie and Li Ge and Rongxian Zhuang and Xuchen Song and Yang Liu and Yahui Zhou},
       year={2025},
       eprint={2504.05599},
       archivePrefix={arXiv},
