@@ -93,7 +93,7 @@ If you use Skywork-R1V in your research, please cite:
   institution = {SkyworkAI},
   year = {2025},
   url = {https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V3.pdf},
-  urldate = {2025-07-08}  % 替换为你访问的日期
+  urldate = {2025-07-08}
 }
 ```
 ```
