@@ -75,6 +75,7 @@ python inference_with_vllm.py \
 
 ## License
 This code repository is licensed under [the MIT License](https://github.com/SkyworkAI/Skywork-R1V/blob/main/LICENSE). 
+
 ✅ Commercial use permitted
 
 ✅ Modification allowed
