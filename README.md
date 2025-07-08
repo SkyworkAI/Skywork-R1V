@@ -49,7 +49,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 **Performance Overview**
 
-<img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v_eval2.png?raw=true" width="800"/>
+<img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v3_eval2.png?raw=true" width="800"/>
 
  
 ## How to Run Locally
