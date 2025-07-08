@@ -9,15 +9,13 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 ## 🔥News
 
-**July 9, 2025**: We released Skywork-R1V3-38B [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)], the latest and most powerful open-source multimodal reasoning model in the Skywork series, pushing the boundaries of multimodal and cross-disciplinary intelligence. With elaborate RL algorithm in the post-training stage, R1V3 significantly enhances multimodal reasoning ablity and achieves open-source state-of-the-art (SOTA) performance across multiple multimodal reasoning benchmarks.
+**July 9, 2025: 💥 We released Skywork-R1V3-38B [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)], the latest and most powerful open-source multimodal reasoning model in the Skywork series, pushing the boundaries of multimodal and cross-disciplinary intelligence. With elaborate RL algorithm in the post-training stage, R1V3 significantly enhances multimodal reasoning ablity and achieves open-source state-of-the-art (SOTA) performance across multiple multimodal reasoning benchmarks.**
 
 **April 28, 2025**: We released awq quantized version of Skywork R1V2[[🤗 Skywork-R1V2-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V2-38B-AWQ)], supporting single-card (above 30GB) inference.
 
  **April 24, 2025**: We released **Skywork-R1V2**, an advanced open-source multimodal reasoning model that demonstrates strong performance across a range of multimodal reasoning benchmarks including MMMU, MMMU-Pro, MathVista, and OlympiadBench.[[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)][[📖R1V2 Report](https://arxiv.org/abs/2504.16656)] 
  
 **April 9, 2025**: Our technical report is currently available on arxiv: [[Skywork-R1V: Pioneering Multimodal Reasoning with CoT](https://arxiv.org/abs/2504.05599)].
-
-**April 1, 2025**: Skywork-R1V supports inference with [[vLLM](https://github.com/vllm-project/vllm)], On 4×L20Y GPUs, vLLM generates 1k tokens in ~12.3s, at least 5× faster than transformers.
 
 **Mar 26, 2025**: We released awq quantized version of Skywork R1V[[🤗 Skywork-R1V-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V-38B-AWQ)], supporting single-card (above 30GB) inference.
 
@@ -26,7 +24,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 
 ## R1V3-38B Evaluation
- Skywork-R1V3-38B demonstrates state-of-the-art performance on multiple multimodal reasoning tasks.
+ Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal reasoning tasks.
 
 **Comparison of Skywork-R1V3 with Multimodal Open-Source and Proprietary Models**
 
@@ -88,6 +86,16 @@ This code repository is licensed under [the MIT License](https://github.com/Skyw
 
 ## Citation
 If you use Skywork-R1V in your research, please cite:
+```
+@techreport{wshen2025skyworkr1v3,
+  author = {Wei Shen and  Jiangbo Pei and Yi Peng and Xuchen Song and Yang Liu and Jian Peng and Haofeng Sun and Yunzhuo Hao and Peiyu Wang and Yahui Zhou},
+  title = {Skywork-R1V3 Technical Report},
+  institution = {SkyworkAI},
+  year = {2025},
+  url = {https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V3.pdf},
+  urldate = {2025-07-08}  % 替换为你访问的日期
+}
+```
 ```
 @misc{chris2025skyworkr1v2multimodalhybrid,
       title={Skywork R1V2: Multimodal Hybrid Reinforcement Learning for Reasoning}, 
