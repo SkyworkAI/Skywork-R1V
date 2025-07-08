@@ -78,7 +78,7 @@ python inference_with_vllm.py \
 
 We provide evaluation scripts to reproduce the results of **Skywork R1V3**.
 
-Most benchmarks can be evaluated using **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)**, except for [EMMA-mini](https://github.com/EMMA-Bench/EMMA) and [MMK12](https://github.com/ModalMinds/MM-EUREKA).
+Most benchmarks can be evaluated using **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)**
 
 ---
 
