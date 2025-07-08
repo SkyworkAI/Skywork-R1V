@@ -3,7 +3,7 @@
 <!-- markdownlint-disable no-duplicate-header -->
 
 # Skywork-R1V: Pioneering Multimodal Reasoning with CoT
-<font size=7><div align='center' >  [[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)] [[🤖 R1V2 ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V2-38B)] [[📖 R1V2 Report](https://arxiv.org/abs/2504.16656)] <br></br>[[🤗 Skywork-R1V-38B](https://huggingface.co/Skywork/Skywork-R1V-38B)] [[🤖 R1V ModelScope](https://modelscope.cn/models/Skywork/Skywork-R1V-38B)] [[📖 R1V1 Report](https://arxiv.org/abs/2504.05599)] </div></font>
+<font size=7><div align='center' >  [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)] [[📖 R1V1 Report]([https://arxiv.org/abs/2504.05599](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V3.pdf))] </div></font>
 
 
 <div align="center">
@@ -24,6 +24,8 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 ## 🔥News
 
+**July 9, 2025**: We released Skywork-R1V3-38B [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)], the latest and most powerful open-source multimodal reasoning model in the Skywork series, pushing the boundaries of multimodal and cross-disciplinary intelligence. With elaborate RL algorithm in the post-training stage, R1V3 significantly enhances multimodal reasoning ablity and achieves open-source state-of-the-art (SOTA) performance across multiple multimodal reasoning benchmarks.
+
 **April 28, 2025**: We released awq quantized version of Skywork R1V2[[🤗 Skywork-R1V2-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V2-38B-AWQ)], supporting single-card (above 30GB) inference.
 
  **April 24, 2025**: We released **Skywork-R1V2**, an advanced open-source multimodal reasoning model that demonstrates strong performance across a range of multimodal reasoning benchmarks including MMMU, MMMU-Pro, MathVista, and OlympiadBench.[[🤗 Skywork-R1V2-38B](https://huggingface.co/Skywork/Skywork-R1V2-38B)][[📖R1V2 Report](https://arxiv.org/abs/2504.16656)] 
@@ -39,112 +41,10 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 
 ## R1V2-38B Evaluation
- Skywork-R1V2-38B demonstrates state-of-the-art performance on both text and multimodal reasoning tasks.
+ Skywork-R1V3-38B demonstrates state-of-the-art performance multiple multimodal reasoning tasks.
  <div align="center">
    <b>Comparison of Skywork-R1V2 with Multimodal Open-Source and Proprietary Models</b>
  </div>
- 
- <table align="center">
-   <thead>
-     <tr>
-       <th rowspan="2">Model</th>
-       <th colspan="5" align="center"><strong>Text Reasoning (pass@1 or %)</strong></th>
-       <th colspan="5" align="center"><strong>Multimodal Reasoning (%)</strong></th>
-     </tr>
-     <tr>
-       <th>AIME24</th>
-       <th>LiveCodebench</th>
-       <th>liveBench</th>
-       <th>IFEVAL</th>
-       <th>BFCL</th>
-       <th>MMMU(val)</th>
-       <th>MathVista(mini)</th>
-       <th>MathVision(mini)</th>
-       <th>OlympiadBench</th>
-       <th>mmmu-pro</th>
-     </tr>
-   </thead>
-   <tbody>
-     <tr>
-       <td><strong>Skywork-R1V2-38B</strong></td>
-       <td align="center"><strong>78.9</strong></td>
-       <td align="center"><strong>63.6</strong></td>
-       <td align="center"><strong>73.2</strong></td>
-       <td align="center"><strong>82.9</strong></td>
-       <td align="center"><strong>66.3</strong></td>
-       <td align="center"><strong>73.6</strong></td>
-       <td align="center">74.0</td>
-       <td align="center">49.0</td>
-       <td align="center"><strong>62.6</strong></td>
-       <td align="center"><strong>52.0</strong></td>
-     </tr>
-     <tr>
-       <td>OpenAI-4o</td>
-       <td align="center">74.6</td>
-       <td align="center">9.3</td>
-       <td align="center">49.9</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">69.1</td>
-       <td align="center">63.8</td>
-       <td align="center"><strong>58.0</strong></td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-     </tr>
-     <tr>
-       <td>Claude 3.5 Sonnet</td>
-       <td align="center">16.0</td>
-       <td align="center">—</td>
-       <td align="center">65.0</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">66.4</td>
-       <td align="center">65.3</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-     </tr>
-     <tr>
-       <td>Kimi k1.5</td>
-       <td align="center">77.5</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">70.0</td>
-       <td align="center">74.9</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-     </tr>
-     <tr>
-       <td>Qwen2.5-VL-72B</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">70.2</td>
-       <td align="center">74.8</td>
-       <td align="center">38.1</td>
-       <td align="center">40.4</td>
-       <td align="center">—</td>
-     </tr>
-     <tr>
-       <td>InternVL3-38B</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">—</td>
-       <td align="center">70.1</td>
-       <td align="center"><strong>75.1</strong></td>
-       <td align="center">34.2</td>
-       <td align="center">-</td>
-       <td align="center">—</td>
-     </tr>
-   </tbody>
- </table>
  
  
  <br></br>
