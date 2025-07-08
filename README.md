@@ -41,18 +41,14 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 
 ## R1V3-38B Evaluation
- Skywork-R1V3-38B demonstrates state-of-the-art performance multiple multimodal reasoning tasks.
- <div align="center">
-   <b>Comparison of Skywork-R1V2 with Multimodal Open-Source and Proprietary Models</b>
- </div>
- <div align="center">
-   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v_eval2.png?raw=true" width="100%" alt="text_reasoning" />
- </div>
- 
- <br></br>
- <div align="center">
-   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v_eval1.png?raw=true" width="100%" alt="multi_reasoning_pm" />
- </div>
+ Skywork-R1V3-38B demonstrates state-of-the-art performance on multiple multimodal reasoning tasks.
+
+**Comparison of Skywork-R1V3 with Multimodal Open-Source and Proprietary Models**
+
+![Skywork-R1V3-38B vs Multimodal Open-Source and Proprietary Models](https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v3_eval.png?raw=true)
+
+![Skywork-R1V3-38B Performance](https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v_eval1.png?raw=true)
+
  
 ## How to Run Locally
 
