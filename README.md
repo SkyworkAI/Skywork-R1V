@@ -7,7 +7,7 @@
 
 Welcome to the Skywork-R1V3 repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and text thinking.
 
-## 🔥News
+## 🔥 News
 
 **July 9, 2025: 💥 We released Skywork-R1V3-38B [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)], the latest and most powerful open-source multimodal reasoning model in the Skywork series, pushing the boundaries of multimodal and cross-disciplinary intelligence. With elaborate RL algorithm in the post-training stage, R1V3 significantly enhances multimodal reasoning ablity and achieves open-source state-of-the-art (SOTA) performance across multiple multimodal reasoning benchmarks.**
 
@@ -23,8 +23,8 @@ Welcome to the Skywork-R1V3 repository! Here, you'll find the model weights and 
 
 
 
-## R1V3-38B Evaluation
- Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal reasoning tasks.
+## 📊 Evaluation
+Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal reasoning tasks. We provide the code in [eval](https://github.com/SkyworkAI/Skywork-R1V/tree/main/eval) to reproduce the results.
 
 **Comparison of Skywork-R1V3 with Multimodal Open-Source and Proprietary Models**
 
@@ -35,7 +35,7 @@ Welcome to the Skywork-R1V3 repository! Here, you'll find the model weights and 
 <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v3_eval2.png?raw=true" width="800"/>
 
  
-## How to Run Locally
+## 🚀 How to Run Locally
 
 ### 1. Clone the Repository
 
