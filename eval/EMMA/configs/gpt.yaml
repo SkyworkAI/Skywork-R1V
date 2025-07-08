@@ -1,0 +1,19 @@
+Strategy_Instruction:
+ CoT: "Please solve the problem step by step."
+ Directly: "Please ensure that your output only contains the final answer without any additional content (such as intermediate reasoning steps)."
+
+multi_choice_format:
+ "{context}
+ 
+{question}
+
+{options}
+
+Answer with the option's letter from the given choices and put the letter in one \"\\boxed{{}}\". "
+
+open_ended_format:
+ "{context}
+ 
+ {question}
+
+Answer the question using a single word or phrase and put the answer in one \"\\boxed{{}}\". "
