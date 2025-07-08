@@ -24,7 +24,7 @@ Welcome to the Skywork-R1V3 repository! Here, you'll find the model weights and 
 
 
 ## 📊 Evaluation
-Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal reasoning tasks. We provide the code in [eval](https://github.com/SkyworkAI/Skywork-R1V/tree/main/eval) to reproduce the results.
+Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal reasoning tasks. We provide the code in [eval](https://github.com/SkyworkAI/Skywork-R1V/tree/main/eval) to reproduce these results.
 
 **Comparison of Skywork-R1V3 with Multimodal Open-Source and Proprietary Models**
 
