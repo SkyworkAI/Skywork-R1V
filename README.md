@@ -91,6 +91,7 @@ This code repository is licensed under [the MIT License](https://github.com/Skyw
 
 ❌ No liability
 
+This project uses the [InternVL3-38B](https://huggingface.co/OpenGVLab/InternVL3-38B) as the base model, which is licensed under the MIT License.
 
 ## Citation
 If you use Skywork-R1V in your research, please cite:
