@@ -26,6 +26,9 @@ Welcome to the Skywork-R1V3 repository! Here, you'll find the model weights and 
 **Mar 18, 2025**: We are thrilled to introduce Skywork R1V, the first industry open-sourced multimodal reasoning model with advanced visual chain-of-thought capabilities, pushing the boundaries of AI-driven vision and logical inference! 🚀
 
 
+## 🤔 Training
+The training code is coming soon! We'll announce it as soon as it's available.
+
 
 ## 📊 Evaluation
 Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal reasoning tasks. We provide the code in [eval](https://github.com/SkyworkAI/Skywork-R1V/tree/main/eval) to reproduce these results.
