@@ -39,5 +39,5 @@ bash ./vlmevalkit/eval_shell/run_eval.sh
 # 📌 Additional Notes
 - Ensure the model is properly loaded before running evaluation.
 - All results will be saved under the `outputs/` directory.
-- For MMK12 and EMMA-mini, please refer to their individual README files for evaluation instructions.
+- For EMMA-mini and MMK12, please refer to [EMMA-mini](https://github.com/EMMA-Bench/EMMA) and [MMK12](https://github.com/ModalMinds/MM-EUREKA) for evaluation instructions.
 
