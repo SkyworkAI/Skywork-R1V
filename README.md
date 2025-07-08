@@ -88,12 +88,12 @@ This code repository is licensed under [the MIT License](https://github.com/Skyw
 If you use Skywork-R1V in your research, please cite:
 ```
 @techreport{wshen2025skyworkr1v3,
-  author = {Wei Shen and  Jiangbo Pei and Yi Peng and Xuchen Song and Yang Liu and Jian Peng and Haofeng Sun and Yunzhuo Hao and Peiyu Wang and Yahui Zhou},
-  title = {Skywork-R1V3 Technical Report},
-  institution = {SkyworkAI},
-  year = {2025},
-  url = {https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V3.pdf},
-  urldate = {2025-07-08}
+      author = {Wei Shen and  Jiangbo Pei and Yi Peng and Xuchen Song and Yang Liu and Jian Peng and Haofeng Sun and Yunzhuo Hao and Peiyu Wang and Yahui Zhou},
+      title = {Skywork-R1V3 Technical Report},
+      institution = {SkyworkAI},
+      year = {2025},
+      url = {https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V3.pdf},
+      urldate = {2025-07-08}
 }
 ```
 ```
