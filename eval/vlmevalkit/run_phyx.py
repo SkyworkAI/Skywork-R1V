@@ -1,0 +1,557 @@
+import json
+import os
+import subprocess
+
+
+# GET the number of GPUs on the node without importing libs like torch
+def get_gpu_list():
+    CUDA_VISIBLE_DEVICES = os.environ.get('CUDA_VISIBLE_DEVICES', '')
+    if CUDA_VISIBLE_DEVICES != '':
+        gpu_list = [int(x) for x in CUDA_VISIBLE_DEVICES.split(',')]
+        return gpu_list
+    try:
+        ps = subprocess.Popen(('nvidia-smi', '--list-gpus'), stdout=subprocess.PIPE)
+        output = subprocess.check_output(('wc', '-l'), stdin=ps.stdout)
+        return list(range(int(output)))
+    except:
+        return []
+
+
+
+RANK = int(os.environ.get('RANK', 0))
+WORLD_SIZE = int(os.environ.get('WORLD_SIZE', 1))
+LOCAL_WORLD_SIZE = int(os.environ.get("LOCAL_WORLD_SIZE",1))
+LOCAL_RANK = int(os.environ.get("LOCAL_RANK",1))
+
+GPU_LIST = get_gpu_list()
+if LOCAL_WORLD_SIZE > 1 and len(GPU_LIST):
+    NGPU = len(GPU_LIST)
+    assert NGPU >= LOCAL_WORLD_SIZE, "The number of processes should be less than or equal to the number of GPUs"
+    GPU_PER_PROC = NGPU // LOCAL_WORLD_SIZE
+    DEVICE_START_IDX = GPU_PER_PROC * LOCAL_RANK
+    CUDA_VISIBLE_DEVICES = [str(i) for i in GPU_LIST[DEVICE_START_IDX: DEVICE_START_IDX + GPU_PER_PROC]]
+    CUDA_VISIBLE_DEVICES = ','.join(CUDA_VISIBLE_DEVICES)
+    # Set CUDA_VISIBLE_DEVICES
+    os.environ['CUDA_VISIBLE_DEVICES'] = CUDA_VISIBLE_DEVICES
+    print(
+        f'RANK: {RANK}, LOCAL_RANK: {LOCAL_RANK}, WORLD_SIZE: {WORLD_SIZE},'
+        f'LOCAL_WORLD_SIZE: {LOCAL_WORLD_SIZE}, CUDA_VISIBLE_DEVICES: {CUDA_VISIBLE_DEVICES}'
+    )
+
+
+from vlmeval.config import supported_VLM
+from vlmeval.dataset.video_dataset_config import supported_video_datasets
+from vlmeval.dataset import build_dataset
+from vlmeval.inference import infer_data_job
+from vlmeval.inference_video import infer_data_job_video
+from vlmeval.inference_mt import infer_data_job_mt
+from vlmeval.smp import *
+from vlmeval.utils.result_transfer import MMMU_result_transfer, MMTBench_result_transfer
+
+
+def build_model_from_config(cfg, model_name, use_vllm=False):
+    import vlmeval.api
+    import vlmeval.vlm
+
+    config = cp.deepcopy(cfg[model_name])
+    if use_vllm:
+        config['use_vllm'] = use_vllm
+    if 'class' not in config:
+        return supported_VLM[model_name](**config)
+    cls_name = config.pop('class')
+    if hasattr(vlmeval.api, cls_name):
+        return getattr(vlmeval.api, cls_name)(**config)
+    elif hasattr(vlmeval.vlm, cls_name):
+        return getattr(vlmeval.vlm, cls_name)(**config)
+    else:
+        raise ValueError(f'Class {cls_name} is not supported in `vlmeval.api` or `vlmeval.vlm`')
+
+
+def build_dataset_from_config(cfg, dataset_name):
+    import vlmeval.dataset
+    import inspect
+    config = cp.deepcopy(cfg[dataset_name])
+    if config == {}:
+        return supported_video_datasets[dataset_name]()
+    assert 'class' in config
+    cls_name = config.pop('class')
+    if hasattr(vlmeval.dataset, cls_name):
+        cls = getattr(vlmeval.dataset, cls_name)
+        sig = inspect.signature(cls.__init__)
+        valid_params = {k: v for k, v in config.items() if k in sig.parameters}
+        if cls.MODALITY == 'VIDEO':
+            if valid_params.get('fps', 0) > 0 and valid_params.get('nframe', 0) > 0:
+                raise ValueError('fps and nframe should not be set at the same time')
+            if valid_params.get('fps', 0) <= 0 and valid_params.get('nframe', 0) <= 0:
+                raise ValueError('fps and nframe should be set at least one valid value')
+        return cls(**valid_params)
+    else:
+        raise ValueError(f'Class {cls_name} is not supported in `vlmeval.dataset`')
+
+
+def parse_args():
+    help_msg = """\
+You can launch the evaluation by setting either --data and --model or --config.
+
+--data and --model:
+    Each Arg should be a list of strings, specifying the names of datasets and models.
+    To find all supported model names, please refer to the `vlmeval/config.py` of check the output of the command \
+        `vlmutil mlist all` in the terminal (you should first have vlmeval installed).
+    To find all supported dataset names, please refer to the `vlmeval/dataset/__init__.py` file. The python script \
+        to print all supported dataset names is as follows:
+        ```python
+        from vlmeval.dataset import SUPPORTED_DATASETS
+        print(SUPPORTED_DATASETS)
+        ```
+        or you can check the output of the command `vlmutil dlist all` in the terminal.
+    To find all supported video dataset default settings, please refer to the \
+        `vlmeval/dataset/video_dataset_config.py` file.
+
+--config:
+    Launch the evaluation by specifying the path to the config json file. Sample Json Content:
+    ```json
+    {
+        "model": {
+            "GPT4o_20240806_T00_HIGH": {
+                "class": "GPT4V",
+                "model": "gpt-4o-2024-08-06",
+                "temperature": 0,
+                "img_detail": "high"
+            },
+            "GPT4o_20240806_T10_Low": {
+                "class": "GPT4V",
+                "model": "gpt-4o-2024-08-06",
+                "temperature": 1.0,
+                "img_detail": "low"
+            },
+            "GPT4o_20241120": {}
+        },
+        "data": {
+            "MME-RealWorld-Lite": {
+                "class": "MMERealWorld",
+                "dataset": "MME-RealWorld-Lite"
+            },
+            "MMBench_DEV_EN_V11": {
+                "class": "ImageMCQDataset",
+                "dataset": "MMBench_DEV_EN_V11"
+            },
+            "MMBench_Video_8frame_nopack": {},
+            "Video-MME_16frame_subs": {
+                "class": "VideoMME",
+                "dataset": "Video-MME",
+                "nframe": 16,
+                "use_subtitle": true,
+            }
+        }
+    }
+    ```
+    Currently, only `model` and `data` are supported fields. The content of each field is a dictionary.
+    For `model`, the key is the name of the model, and the value is a dictionary containing the following keys:
+    - `class`: The class name of the model, which should be a class in `vlmeval.vlm` or `vlmeval.api`.
+    - Other keys are specific to the model, please refer to the corresponding class.
+    - Tip: The defined model in the `supported_VLM` of `vlmeval/config.py` can be used as a shortcut.
+    For `data`, the key is the name of the dataset (should be the same as the `dataset` field in most cases, \
+        except for video datasets), and the value is a dictionary containing the following keys:
+    - `class`: The class name of the dataset, which should be a class in `vlmeval.dataset`.
+    - `dataset`: The name of the dataset, which should be a string that is accepted by the `dataset` argument of the \
+        corresponding class.
+    - Other keys are specific to the dataset, please refer to the corresponding class.
+    - Tip: The defined dataset in the `supported_video_datasets` of `vlmeval/dataset/video_dataset_config.py` \
+        can be used as a shortcut.
+
+    The keys in the `model` and `data` fields will be used for naming the prediction files and evaluation results.
+    When launching with `--config`, args for API VLMs, such as `--retry`, `--verbose`, will be ignored.
+"""
+    parser = argparse.ArgumentParser(description=help_msg, formatter_class=argparse.RawTextHelpFormatter)
+    # Essential Args, Setting the Names of Datasets and Models
+    parser.add_argument('--data', type=str, nargs='+', help='Names of Datasets')
+    parser.add_argument('--model', type=str, nargs='+', help='Names of Models')
+    parser.add_argument('--config', type=str, help='Path to the Config Json File')
+    # Work Dir
+    parser.add_argument('--work-dir', type=str, default='./outputs', help='select the output directory')
+    # Infer + Eval or Infer Only
+    parser.add_argument('--mode', type=str, default='all', choices=['all', 'infer'])
+    # API Kwargs, Apply to API VLMs and Judge API LLMs
+    parser.add_argument('--api-nproc', type=int, default=4, help='Parallel API calling')
+    parser.add_argument('--retry', type=int, default=None, help='retry numbers for API VLMs')
+    parser.add_argument('--judge-args', type=str, default=None, help='Judge arguments in JSON format')
+    # Explicitly Set the Judge Model
+    parser.add_argument('--judge', type=str, default=None)
+    # Logging Utils
+    parser.add_argument('--verbose', action='store_true')
+    # Configuration for Resume
+    # Ignore: will not rerun failed VLM inference
+    parser.add_argument('--ignore', action='store_true', help='Ignore failed indices. ')
+    # Reuse: will reuse the existing prediction files
+    parser.add_argument('--reuse', action='store_true')
+    # Reuse-aux: if set, when reuse is True, will also reuse the auxiliary evaluation files
+    parser.add_argument('--reuse-aux', type=bool, default=True, help='reuse auxiliary evaluation files')
+    parser.add_argument(
+        '--use-vllm', action='store_true', help='use vllm to generate, the flag is only supported in Llama4 for now')
+
+    args = parser.parse_args()
+    return args
+
+
+def main():
+    import os
+    logger = get_logger('RUN')
+    args = parse_args()
+    use_config, cfg = False, None
+    if args.config is not None:
+        assert args.data is None and args.model is None, '--data and --model should not be set when using --config'
+        use_config, cfg = True, load(args.config)
+        args.model = list(cfg['model'].keys())
+        args.data = list(cfg['data'].keys())
+    else:
+        assert len(args.data), '--data should be a list of data files'
+
+    if RANK == 0:
+        if not args.reuse:
+            logger.warning('--reuse is not set, will not reuse previous (before one day) temporary files')
+        else:
+            logger.warning('--reuse is set, will reuse the latest prediction & temporary pickle files')
+
+    # if 'MMEVAL_ROOT' in os.environ:
+    #     args.work_dir = os.environ['MMEVAL_ROOT']
+    print('-------------------')
+    if not use_config:
+        for k, v in supported_VLM.items():
+            if hasattr(v, 'keywords') and 'retry' in v.keywords and args.retry is not None:
+                v.keywords['retry'] = args.retry
+                supported_VLM[k] = v
+            if hasattr(v, 'keywords') and 'verbose' in v.keywords and args.verbose is not None:
+                v.keywords['verbose'] = args.verbose
+                supported_VLM[k] = v
+    print('-------------------')
+    if WORLD_SIZE > 1:
+        import torch.distributed as dist
+        dist.init_process_group(
+            backend='nccl',
+            timeout=datetime.timedelta(seconds=int(os.environ.get('DIST_TIMEOUT', 3600)))
+        )
+
+    for _, model_name in enumerate(args.model):
+        print('-------------------')
+        model = None
+        date, commit_id = timestr('day'), githash(digits=8)
+        eval_id = f"T{date}_G{commit_id}"
+
+        pred_root = osp.join(args.work_dir, model_name, eval_id)
+        pred_root_meta = osp.join(args.work_dir, model_name)
+        os.makedirs(pred_root_meta, exist_ok=True)
+        print('-------------------')
+        prev_pred_roots = ls(osp.join(args.work_dir, model_name), mode='dir')
+        if len(prev_pred_roots) and args.reuse:
+            prev_pred_roots.sort()
+
+        if not osp.exists(pred_root):
+            os.makedirs(pred_root, exist_ok=True)
+
+        if use_config:
+            model = build_model_from_config(cfg['model'], model_name, args.use_vllm)
+        print('-------------------')
+        for _, dataset_name in enumerate(args.data):
+            print('-------------------dsd')
+            if WORLD_SIZE > 1:
+                dist.barrier()
+
+            try:
+                result_file_base = f'{model_name}_{dataset_name}.xlsx'
+
+                if use_config:
+                    if WORLD_SIZE > 1:
+                        if RANK == 0:
+                            dataset = build_dataset_from_config(cfg['data'], dataset_name)
+                        dist.barrier()
+                    dataset = build_dataset_from_config(cfg['data'], dataset_name)
+                    if dataset is None:
+                        logger.error(f'Dataset {dataset_name} is not valid, will be skipped. ')
+                        continue
+                else:
+                    dataset_kwargs = {}
+                    if dataset_name in ['MMLongBench_DOC', 'DUDE', 'DUDE_MINI', 'SLIDEVQA', 'SLIDEVQA_MINI']:
+                        dataset_kwargs['model'] = model_name
+
+                    # If distributed, first build the dataset on the main process for doing preparation works
+                    if WORLD_SIZE > 1:
+                        if RANK == 0:
+                            dataset = build_dataset(dataset_name, **dataset_kwargs)
+                        dist.barrier()
+
+                    dataset = build_dataset(dataset_name, **dataset_kwargs)
+                    if dataset is None:
+                        logger.error(f'Dataset {dataset_name} is not valid, will be skipped. ')
+                        continue
+                print(dataset)
+                print('----------------dxsdsds---')
+                # Handling Multi-Turn Dataset
+                if dataset.TYPE == 'MT':
+                    result_file_base = result_file_base.replace('.xlsx', '.tsv')
+
+                result_file = osp.join(pred_root, result_file_base)
+
+                # Reuse the previous prediction file if exists
+                if RANK == 0 and len(prev_pred_roots):
+                    prev_result_files = []
+                    prev_pkl_file_list = []
+                    for root in prev_pred_roots[::-1]:
+                        if osp.exists(osp.join(root, result_file_base)):
+                            if args.reuse_aux:
+                                prev_result_files = fetch_aux_files(osp.join(root, result_file_base))
+                            else:
+                                prev_result_files = [osp.join(root, result_file_base)]
+                            break
+                        elif commit_id in root and len(ls(root)) and root != pred_root:
+                            temp_files = ls(root, match=[dataset_name, '.pkl'])
+                            if len(temp_files):
+                                prev_pkl_file_list.extend(temp_files)
+                                break
+                    if not args.reuse:
+                        prev_result_files = []
+                        prev_pkl_file_list = []
+                    if len(prev_result_files):
+                        for prev_result_file in prev_result_files:
+                            src = prev_result_file
+                            tgt = osp.join(pred_root, osp.basename(src))
+                            if not osp.exists(tgt):
+                                shutil.copy(src, tgt)
+                                logger.info(f'--reuse is set, will reuse the prediction file {src}.')
+                            else:
+                                logger.warning(f'File already exists: {tgt}')
+
+                    elif len(prev_pkl_file_list):
+                        for fname in prev_pkl_file_list:
+                            target_path = osp.join(pred_root, osp.basename(fname))
+                            if not osp.exists(target_path):
+                                shutil.copy(fname, target_path)
+                                logger.info(f'--reuse is set, will reuse the prediction pickle file {fname}.')
+                            else:
+                                logger.warning(f'File already exists: {target_path}')
+
+                if WORLD_SIZE > 1:
+                    dist.barrier()
+
+                if model is None:
+                    model = model_name  # which is only a name
+
+                # Perform the Inference
+                if dataset.MODALITY == 'VIDEO':
+                    model = infer_data_job_video(
+                        model,
+                        work_dir=pred_root,
+                        model_name=model_name,
+                        dataset=dataset,
+                        result_file_name=result_file_base,
+                        verbose=args.verbose,
+                        api_nproc=args.api_nproc,
+                        use_vllm=args.use_vllm)
+                elif dataset.TYPE == 'MT':
+                    model = infer_data_job_mt(
+                        model,
+                        work_dir=pred_root,
+                        model_name=model_name,
+                        dataset=dataset,
+                        verbose=args.verbose,
+                        api_nproc=args.api_nproc,
+                        ignore_failed=args.ignore,
+                        use_vllm=args.use_vllm)
+                else:
+                    model = infer_data_job(
+                        model,
+                        work_dir=pred_root,
+                        model_name=model_name,
+                        dataset=dataset,
+                        verbose=args.verbose,
+                        api_nproc=args.api_nproc,
+                        ignore_failed=args.ignore,
+                        use_vllm=args.use_vllm)
+
+                # Set the judge kwargs first before evaluation or dumping
+
+                judge_kwargs = {
+                    'nproc': args.api_nproc,
+                    'verbose': args.verbose,
+                    'retry': args.retry if args.retry is not None else 3,
+                    **(json.loads(args.judge_args) if args.judge_args else {}),
+                }
+
+                if args.retry is not None:
+                    judge_kwargs['retry'] = args.retry
+                if args.judge is not None:
+                    judge_kwargs['model'] = args.judge
+                else:
+                    print(dataset_name)
+                    if dataset.TYPE in ['MCQ', 'Y/N', 'MCQ_MMMU_Pro'] or listinstr(
+                        ['moviechat1k'], dataset_name.lower()
+                    ):
+                        if listinstr(['WeMath'], dataset_name):
+                            judge_kwargs['model'] = 'gpt-4o-mini'
+                        elif listinstr(['VisuLogic'], dataset_name):
+                            judge_kwargs['model'] = 'exact_matching'
+                        else:
+                            judge_kwargs['model'] = 'chatgpt-0125'
+                    elif listinstr(['MMVet', 'LLaVABench', 'MMBench_Video'], dataset_name):
+                        judge_kwargs['model'] = 'gpt-4-turbo'
+                    elif listinstr(['VGRPBench'], dataset_name):
+                        judge_kwargs['model'] = 'gpt-4o'
+                    elif listinstr(['MathVista', 'MathVerse', 'MathVision', 'DynaMath', 'VL-RewardBench', 'LogicVista', 'MOAT', 'OCR_Reasoning'], dataset_name):  # noqa: E501
+                        judge_kwargs['model'] = 'gpt-4o-mini'
+                    elif listinstr(['MMLongBench', 'MMDU', 'DUDE', 'SLIDEVQA', 'MIA-Bench', 'WildVision', 'MMAlignBench', 'MM-IFEval'], dataset_name):  # noqa: E501
+                        judge_kwargs['model'] = 'gpt-4o'
+                    elif listinstr(['VDC'], dataset_name):
+                        judge_kwargs['model'] = 'llama31-8b'
+                    elif listinstr(['VideoMMLU_QA', 'VideoMMLU_CAP'], dataset_name):
+                        judge_kwargs['model'] = 'qwen-72b'
+
+                if RANK == 0:
+                    logger.info(judge_kwargs)
+
+                if WORLD_SIZE > 1:
+                    dist.barrier()
+
+                # Only RANK 0 handles the evaluation part
+                if RANK == 0:
+                    import pandas as pd
+                    data = pd.read_excel(result_file)
+                    items = []
+                    items_1 = []
+                    count = 0
+                    for i in range(len(data['id'])):
+                        prediction = data['prediction'][i]
+                        answer = 'boxed{' + data['answer'][i] + '}'
+                        if(answer in prediction):
+                            count = count + 1
+                            item = {
+                                "question": data['question'][i],
+                                "prediction": data['prediction'][i],
+                                "answer": data['answer'][i],
+                                "category": data['category'][i], 
+                                "A": data['A'][i],
+                                "B": data['B'][i],
+                                "C": data['C'][i],
+                                "D": data['D'][i],
+                                "right": True
+                            }
+                            items_1.append(item)
+                        else:
+                            item = {
+                                "question": data['question'][i],
+                                "prediction": data['prediction'][i],
+                                "answer": data['answer'][i],
+                                "category": data['category'][i], 
+                                "A": data['A'][i],
+                                "B": data['B'][i],
+                                "C": data['C'][i],
+                                "D": data['D'][i],
+                                "right": False
+                            }
+                            items.append(item)
+                    count_Op = 0
+                    count_WA = 0
+                    count_Th = 0
+                    count_MP = 0
+                    count_Me = 0
+                    count_El = 0
+                    count_Op_right = 0
+                    count_WA_right = 0
+                    count_Th_right = 0
+                    count_MP_right = 0
+                    count_Me_right = 0
+                    count_El_right = 0
+                    import openai
+                    import os
+                    GPTAppKey = 'xxx'
+                    app_key = os.environ.get('GPTAppKey', GPTAppKey)
+                    if app_key == '':
+                        print("未设置环境变量 GPTAppKey")
+                        exit(1)
+
+                    ai = openai.OpenAI(
+                        base_url="xxx",
+                        api_key=app_key,
+                    )
+
+                    model_name = 'deepseek-chat'
+                    
+                    def format_prompt(item):
+                        base_prompt = """判断AI回答是否正确，只需要回答，yes or no"""  # 和原来的base_prompt保持一致，可保留不变
+                        choices_parts = [f"{opt}. {item[opt]}" for opt in ['A', 'B', 'C', 'D'] if opt in item and pd.notna(item[opt])]
+                        choices_str = "\n".join(choices_parts) if choices_parts else "无选项"
+                        prompt = (
+                            f"#问题#\n{item['question']}\n\n"
+                            f"#选项#\n{choices_str}\n\n"
+                            f"#AI回答#\n{item['prediction']}\n\n"
+                            f"#标准答案#\n{item['answer']}\n\n"
+                            f"{base_prompt}"
+                        )
+                        return prompt
+                    def get_ans(prompt):
+                        messages = [{"role": "user", "content": prompt}]
+                        response = ai.chat.completions.create(
+                            model=model_name,
+                            messages=messages,
+                            stream=False,
+                            temperature=0.1,
+                            presence_penalty=0.3,
+                            top_p=0.7,
+                            max_tokens=4000
+                        )
+                        return response.choices[0].message.content
+                    response_LLM = []
+                    length = len(items)
+                    for i in tqdm(range(length)):
+                        prompt = format_prompt(items[i])
+                        ans = get_ans(prompt)
+                        response_LLM.append(ans)
+                        if(ans!='no'):
+                            items[i]["right"] = True
+                    data = items_1 + items
+                    for i in range(len(data)):
+                        item = data[i]
+                        if(item['category']=='Optics'):
+                            count_Op = count_Op + 1
+                            if(item['right'] == True):
+                                count_Op_right = count_Op_right + 1
+                        if(item['category']=='Thermodynamics'):
+                            count_Th = count_Th + 1
+                            if(item['right'] == True):
+                                count_Th_right = count_Th_right + 1
+                        if(item['category']=='Waves/Acoustics'):
+                            count_WA = count_WA + 1
+                            if(item['right'] == True):
+                                count_WA_right = count_WA_right + 1
+                        if(item['category']=='Modern Physics'):
+                            count_MP = count_MP + 1
+                            if(item['right'] == True):
+                                count_MP_right = count_MP_right + 1
+                        if(item['category']=='Mechanics'):
+                            count_Me = count_Me + 1
+                            if(item['right'] == True):
+                                count_Me_right = count_Me_right + 1
+                        if(item['category']=='Electromagnetism'):
+                            count_El = count_El + 1
+                            if(item['right'] == True):
+                                count_El_right = count_El_right + 1
+                    print('Optics Accuracy: ',count_Op_right/count_Op)
+                    print('Thermodynamics Accuracy: ',count_Th_right/count_Th)
+                    print('Waves/Acoustics Accuracy: ',count_WA_right/count_WA)
+                    print('Modern Physics Accuracy: ',count_MP_right/count_MP)
+                    print('Mechanics Accuracy: ',count_Me_right/count_Me)
+                    print('Electromagnetism Accuracy: ',count_El_right/count_El)
+                    print('Total Accuracy: ',(count_Op_right+count_Th_right+count_WA_right+count_MP_right+count_Me_right+count_El_right)/(count_Op+count_Th+count_WA+count_MP+count_Me+count_El))
+
+                    
+
+            except Exception as e:
+                logger.exception(f'Model {model_name} x Dataset {dataset_name} combination failed: {e}, '
+                                 'skipping this combination.')
+                continue
+
+    if WORLD_SIZE > 1:
+        dist.destroy_process_group()
+
+
+if __name__ == '__main__':
+    load_env()
+    main()
