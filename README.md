@@ -2,7 +2,11 @@
 <!-- markdownlint-disable html -->
 <!-- markdownlint-disable no-duplicate-header -->
 
-# Skywork-R1V3 
+<div align="center">
+  <img src="(https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/skywork-logo.png" alt="Skywork Logo" width="400">
+  <h1><strong>Skywork-R1V3</strong></h1>
+</div>
+
 <font size=7><div align='center' >  [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)] [[📖 R1V3 Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/report/Skywork_R1V3.pdf)] </div></font>
 
 Welcome to the Skywork-R1V3 repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and text thinking.
