@@ -45,9 +45,11 @@ Welcome to the Skywork-R1V repository! Here, you'll find the model weights and i
 
 **Comparison of Skywork-R1V3 with Multimodal Open-Source and Proprietary Models**
 
-![Skywork-R1V3-38B vs Multimodal Open-Source and Proprietary Models](https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v3_eval.png?raw=true)
+<img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v3_eval.png?raw=true" width="800"/>
 
-![Skywork-R1V3-38B Performance](https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v_eval1.png?raw=true)
+**Performance Overview**
+
+<img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/r1v_eval1.png?raw=true" width="800"/>
 
  
 ## How to Run Locally
