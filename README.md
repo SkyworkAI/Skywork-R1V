@@ -3,7 +3,7 @@
 <!-- markdownlint-disable no-duplicate-header -->
 
 <div align="center">
-  <img src="(https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/skywork_logo.png" alt="skywork Logo" width="400">
+  <img src="(https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/skywork_logo.png" alt="Skywork Logo" width="400">
   <h1><strong>Skywork-R1V3</strong></h1>
 </div>
 
