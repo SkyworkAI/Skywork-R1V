@@ -5,21 +5,6 @@
 # Skywork-R1V: Pioneering Multimodal Reasoning with CoT
 <font size=7><div align='center' >  [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)] [[📖 R1V3 Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V3.pdf)] </div></font>
 
-
-<div align="center">
-  <table>
-    <tr>
-      <td>
-        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/math_r1v.gif" width="450" height="400" alt="math_r1v" />
-      </td>
-      <td>
-        <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/Chemistry_cn.gif" width="450" height="400" alt="chemistry_1" />
-      </td>
-    </tr>
-  </table>
-</div>
-
-<br></br>
 Welcome to the Skywork-R1V repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model, enabling advanced visual and text thinking.
 
 ## 🔥News
