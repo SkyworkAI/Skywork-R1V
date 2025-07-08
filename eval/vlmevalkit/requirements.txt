@@ -1,0 +1,41 @@
+accelerate
+decord; platform_machine != 'arm64'
+dotenv
+einops
+eva-decord; platform_machine == 'arm64'
+# for gemini api
+google-genai
+gradio
+huggingface_hub
+imageio
+ipdb
+json_repair
+matplotlib
+nltk
+numpy
+omegaconf
+openai
+opencv-python>=4.4.0.46
+openpyxl
+pandas
+pillow
+portalocker
+protobuf
+python-dotenv
+qwen_vl_utils
+requests
+rich
+sentencepiece
+setuptools
+sty
+tabulate
+tiktoken
+timeout-decorator
+timm
+torch
+torchvision
+tqdm
+transformers
+typing_extensions
+validators
+xlsxwriter
