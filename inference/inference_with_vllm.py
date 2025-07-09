@@ -20,7 +20,6 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--model_path",
         type=str,
-        default="Skywork/Skywork-R1V2-38B",
         help="Path to the model"
     )
     parser.add_argument(
