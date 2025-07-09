@@ -6,7 +6,13 @@ We provide evaluation scripts to reproduce the results of **Skywork R1V3**.
 Most benchmarks can be evaluated using **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)**
 
 ---
+## ⚙️ Environment Setup
 
+Install all dependencies:
+
+```bash
+bash ./eval/vlmevalkit/env.sh
+```
 ### Set OpenAI API Key and Base URL
 Create or edit the `.env` file in `vlmevalkit/` and add the following:
 
@@ -14,7 +20,7 @@ Create or edit the `.env` file in `vlmevalkit/` and add the following:
 OPENAI_API_KEY=your_api_key_here
 OPENAI_API_BASE=https://your_base_url_here
 ```
-# 🚀 Evaluation Steps
+## 🚀 Evaluation Steps
 **Step 1: Launch the Model**
 
 Start tmux and deploy the model
