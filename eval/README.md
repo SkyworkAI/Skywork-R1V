@@ -11,7 +11,7 @@ Most benchmarks can be evaluated using **[VLMEvalKit](https://github.com/open-co
 Install all dependencies:
 
 ```bash
-bash ./eval/vlmevalkit/env.sh
+bash ./eval/vlmevalkit/build_env.sh
 ```
 ### Set OpenAI API Key and Base URL
 Create or edit the `.env` file in `vlmevalkit/` and add the following:
