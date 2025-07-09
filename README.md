@@ -93,7 +93,7 @@ This project uses the [InternVL3-38B](https://huggingface.co/OpenGVLab/InternVL3
 If you use Skywork-R1V in your research, please cite:
 ```
 @techreport{wshen2025skyworkr1v3,
-      author = {Wei Shen and  Jiangbo Pei and Yi Peng and Xuchen Song and Yang Liu and Jian Peng and Haofeng Sun and Yunzhuo Hao and Peiyu Wang and Yahui Zhou},
+      author = {Wei Shen and  Jiangbo Pei and Yi Peng and Xuchen Song and Yang Liu and Jian Peng and Haofeng Sun and Yunzhuo Hao and Peiyu Wang and Jianhao Zhang and Yahui Zhou},
       title = {Skywork-R1V3 Technical Report},
       institution = {SkyworkAI},
       year = {2025},
