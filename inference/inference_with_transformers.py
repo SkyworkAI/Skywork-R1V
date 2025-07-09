@@ -6,7 +6,7 @@ import argparse
 def main():
     # 解析命令行参数
     parser = argparse.ArgumentParser(description="Run inference with Skywork-R1V model.")
-    parser.add_argument('--model_path', type=str, default='Skywork/Skywork-R1V-38B', help="Path to the model.")
+    parser.add_argument('--model_path', type=str, default='Skywork/Skywork-R1V3-38B', help="Path to the model.")
     parser.add_argument('--image_paths', type=str, nargs='+', required=True, help="Path(s) to the image(s).")
     parser.add_argument('--question', type=str, required=True, help="Question to ask the model.")
     args = parser.parse_args()
