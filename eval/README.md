@@ -23,10 +23,9 @@ OPENAI_API_BASE=https://your_base_url_here
 ## 🚀 Evaluation Steps
 **Step 1: Launch the Model**
 
-Start tmux and deploy the model
+Start possible setting, and deploy the model
 ```bash
-tmux
-export TORCH_CUDA_ARCH_LIST="8.9+PTX"
+export TORCH_CUDA_ARCH_LIST="8.9+PTX" # optional
 bash ./vlmevalkit/eval_shell/launch_vlm.sh
 ```
 **Step 2: Run Evaluation Scripts**
