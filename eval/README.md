@@ -3,7 +3,7 @@
 
 We provide evaluation scripts to reproduce the results of **Skywork R1V3**.
 
-Most benchmarks can be evaluated using **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)**
+Most benchmarks can be evaluated using **[VLMEvalKit](https://github.com/open-compass/VLMEvalKit)** by vllm inference engine.
 
 ---
 ## ⚙️ Environment Setup
