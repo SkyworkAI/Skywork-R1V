@@ -35,7 +35,8 @@ Evaluate on supported benchmarks:
 ```bash
 bash ./vlmevalkit/eval_shell/run_eval.sh
 ```
-> ⚠️ **Note:** Some benchmarks (e.g., `MMMU`) require post-processing to adjust results using rule-based scripts.
+> ⚠️ **Note:** Some benchmarks (e.g., `MMMU`) require post-processing to adjust results using rule-based scripts. For PhyX evaluation, you need to download the TSV dataset from [here](https://huggingface.co/datasets/catpp/skywork-r1v3-phy_tsv) and place it in the `./eval/vlmevalkit/eval_shell/LMUData` directory.
+
 
 
 # 📌 Additional Notes
