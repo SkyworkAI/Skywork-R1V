@@ -34,23 +34,23 @@ Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal
 | Category       | Benchmark               | Metric  | Skywork-38B | QVQ-72B | InternVL-78B | Qwen-72B | Claude 3.7 | GPT-4o |
 |----------------|-------------------------|---------|------------:|--------:|-------------:|--------:|----------:|---------:|
 | **General**    | MMMU (val)              | Acc.    | 🏆 **76.0**   | 70.3    | 72.2         | 70.3    | 75.0      | 70.7   |
-|                | EMMA (mini-cot)         | Acc.    | 40.3       | 32.0    | 38.3         | 39.3    | 🏆 **56.5**   | 36.0   |
+|                | EMMA (mini-cot)         | Acc.    | 40.3       | 32.0    | 38.3         | 39.3    |  **56.5**   | 36.0   |
 |                | MMMU-pro                | Acc.    | 🏆 **55.4**   | 46.9*   | 48.6         | 51.1    | 50.0      | 54.5   |
 |                | MMK12                   | Acc.    | 🏆 **78.5**    | 62.7*   | 67.4*        | 70.5*   | 55.3      | 49.9   |
-|                | MMstar                  | Acc.    | 70.6       | 60.8    | 🏆 **72.5**     | 70.8    | 68.8      | 65.1   |
-|                | MMBench-en-1.1          | Acc.    | 85.7       | 72.6*   | 87.7         | 🏆 **88.0** | 82.0      | 84.3   |
+|                | MMstar                  | Acc.    | 70.6       | 60.8    |  **72.5**     | 70.8    | 68.8      | 65.1   |
+|                | MMBench-en-1.1          | Acc.    | 85.7       | 72.6*   | 87.7         |  **88.0** | 82.0      | 84.3   |
 |                | HallusionBench          | Acc.    | 🏆 **61.3**   | 55.3*   | 59.1         | 55.2    | 58.3      | 56.2   |
-| **Mathematics**| MathVista (mini)        | Acc.    | 77.1       | 71.4    | 🏆 **79.0**      | 74.8    | 66.8      | 62.9   |
+| **Mathematics**| MathVista (mini)        | Acc.    | 77.1       | 71.4    |  **79.0**      | 74.8    | 66.8      | 62.9   |
 |                | MathVerse (vision-only) | Acc.    | 🏆 **59.6**   | 45.1    | 51.0         | 57.6    | 49.9*     | 49.9   |
-|                | MathVision              | Acc.    | 52.6       | 35.9    | 43.1         | 38.1    | 🏆 58.6   | 31.2   |
+|                | MathVision              | Acc.    | 52.6       | 35.9    | 43.1         | 38.1    |  58.6   | 31.2   |
 |                | WeMath (strict)          | Acc.    |🏆 **56.5**   | 37.7    | 46.1         | 50.6    | 48.9*     | 50.6   |
 | **Logic**      | Visulogic               | Acc.    | 🏆 **28.5**   | 23.5*   | 27.7         | 26.2    | 25.9      | 26.3   |
-|                | LogicVista              | Acc.    | 59.7       | 53.8    | 55.9         | 57.1    | 60.6*     | 🏆 **64.4** |
+|                | LogicVista              | Acc.    | 59.7       | 53.8    | 55.9         | 57.1    | 60.6*     |  **64.4** |
 |                | MME-reasoning           | Acc.    | 🏆 **42.8**   | 35.2    | 32.1         | 34.1    | 34.1      | 30.2   |
 | **Physics**    | PhyX (mc-text-minimal)  | Acc.    | 🏆 **52.8**    | 35.2*   | 40.5         | 44.8    | 41.6      | 43.8   |
-|                | SeePhys                 | Acc.    | 31.5       | 22.5    | 19.0*        | 24.2    | 🏆 **34.6**   | 21.9   |
+|                | SeePhys                 | Acc.    | 31.5       | 22.5    | 19.0*        | 24.2    |  **34.6**   | 21.9   |
 
-🏆 **Top performer** in each benchmark  
+🏆 **Top performer** of Skywork-R1V3 in each benchmark  
 [*] indicates results from our evaluation framework.
 
 
