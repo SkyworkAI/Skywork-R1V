@@ -40,7 +40,7 @@ Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal
 |                | MMstar                  | Acc.    | 70.6       | 60.8    |  **72.5**     | 70.8    | 68.8      | 65.1   |
 |                | MMBench-en-1.1          | Acc.    | 85.7       | 72.6*   | 87.7         |  **88.0** | 82.0      | 84.3   |
 |                | HallusionBench          | Acc.    | 🏆 **61.3**   | 55.3*   | 59.1         | 55.2    | 58.3      | 56.2   |
-| **Mathematics**| MathVista (mini)        | Acc.    | 77.1       | 71.4    |  **79.0**      | 74.8    | 66.8      | 62.9   |
+| **Mathematics**| MathVista (mini)        | Acc.    | 🏆 **77.1**       | 71.4    |  72.2      | 74.8    | 66.8      | 62.9   |
 |                | MathVerse (vision-only) | Acc.    | 🏆 **59.6**   | 45.1    | 51.0         | 57.6    | 49.9*     | 49.9   |
 |                | MathVision              | Acc.    | 52.6       | 35.9    | 43.1         | 38.1    |  58.6   | 31.2   |
 |                | WeMath (strict)          | Acc.    |🏆 **56.5**   | 37.7    | 46.1         | 50.6    | 48.9*     | 50.6   |
