@@ -13,6 +13,8 @@ Welcome to the Skywork-R1V3 repository! Here, you'll find the model weights and 
 
 ## 🔥 News
 
+**July 15, 2025**: We released awq quantized version of Skywork R1V3[[🤗 Skywork-R1V3-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V3-38B-AWQ)], supporting single-card (above 30GB) inference.
+
 **July 9, 2025: 💥 We released Skywork-R1V3-38B [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)], the latest and most powerful open-source multimodal reasoning model in the Skywork series, pushing the boundaries of multimodal and cross-disciplinary intelligence. Mainly through RL algorithm in post-training, R1V3 significantly enhances multimodal reasoning ablity and achieves open-source state-of-the-art (SOTA) performance across multiple multimodal reasoning benchmarks, e.g. 76.0 on MMMU.**
 
 **April 28, 2025**: We released awq quantized version of Skywork R1V2[[🤗 Skywork-R1V2-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V2-38B-AWQ)], supporting single-card (above 30GB) inference.
