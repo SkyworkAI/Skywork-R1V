@@ -26,7 +26,7 @@ OPENAI_API_BASE=https://your_base_url_here
 Start possible setting, and deploy the model
 ```bash
 export TORCH_CUDA_ARCH_LIST="8.9+PTX" # optional
-bash ./eval/vlmevalkit/eval_shell/launch_vlm.sh
+bash ./eval/vlmevalkit/eval_shell/launch_vlm_model.sh
 ```
 **Step 2: Run Evaluation Scripts**
 
