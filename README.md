@@ -69,7 +69,7 @@ Skywork-R1V3-38B demonstrates state-of-the-art performance on various multimodal
 
 ```shell
 git clone https://github.com/SkyworkAI/Skywork-R1V.git
-cd skywork-r1v/inference
+cd Skywork-R1V/inference
 ```
 
 ### 2. Set Up the Environment
