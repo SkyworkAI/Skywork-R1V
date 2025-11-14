@@ -14,6 +14,8 @@
 - `test_cases.jsonl` - 测试用例输入文件
 - `visual.py` - Web 可视化工具，查看测试结果
 - `result_*.jsonl` - 测试结果输出文件
+- `parse_utils.py` - 解析工具，将 full_response 拆分成结构化信息
+- `demo_parse.py` - 解析工具使用示例
 
 ## 🚀 快速开始
 
@@ -54,6 +56,70 @@ python3 visual.py 8080
 
 然后在浏览器中输入结果文件路径（如 `result_nonstream.jsonl`）查看结果。
 
+### 4. 解析结构化响应
+
+使用 `parse_utils.py` 可以将 `full_response` 拆分成结构化的信息，便于分析每一轮的思考、工具调用和观察结果。
+
+#### 快速体验
+
+```bash
+# 运行演示脚本，解析第一条数据
+python3 demo_parse.py
+```
+
+这将显示：
+- 原始数据的基本信息
+- 按轮次展示的思考、工具调用和观察
+- 最终轮的思考和答案
+- 统计信息（总轮数、使用的工具等）
+
+#### 编程使用
+
+```python
+from parse_utils import parse_full_response, get_round_statistics
+import json
+
+# 读取数据
+with open('result_nonstream.jsonl', 'r') as f:
+    data = json.loads(f.readline())
+
+# 解析 full_response
+parsed = parse_full_response(data['response']['full_response'])
+
+# 访问结构化数据
+for round_data in parsed['rounds']:
+    print(f"轮次 {round_data['round_num']}")
+    print(f"思考: {round_data['think']}")
+    print(f"工具: {round_data['tool_call']['name']}")
+    print(f"观察: {round_data['observation']}")
+
+# 最终答案
+print(f"最终答案: {parsed['final_round']['answer']}")
+
+# 获取统计信息
+stats = get_round_statistics(parsed)
+print(f"总轮数: {stats['total_rounds']}")
+print(f"使用的工具: {stats['tools_used']}")
+```
+
+#### 批量处理
+
+```python
+from parse_utils import parse_jsonl_file
+
+# 解析整个 JSONL 文件
+results = parse_jsonl_file(
+    'result_nonstream.jsonl',
+    'result_nonstream_parsed.jsonl'  # 可选：保存解析结果
+)
+
+# 处理所有结果
+for item in results:
+    print(f"问题: {item['question']}")
+    print(f"轮数: {len(item['parsed_response']['rounds'])}")
+    print(f"答案: {item['parsed_response']['final_round']['answer']}")
+```
+
 ## 📝 测试用例格式
 
 ```json
@@ -65,13 +131,42 @@ python3 visual.py 8080
 
 ## 📊 结果文件格式
 
+### 原始格式
+
 ```json
 {
   "image": "图片路径",
   "question": "问题",
   "response": {
-    "full_response": "完整回答内容",
+    "full_response": "完整回答内容（包含 <think>、<tool_call>、<observation>、<answer> 标签）",
     "raw_response": "原始API响应"
+  }
+}
+```
+
+### 解析后的结构化格式
+
+使用 `parse_full_response()` 解析后的数据结构：
+
+```json
+{
+  "rounds": [
+    {
+      "round_num": 1,
+      "think": "第一轮思考内容",
+      "tool_call": {
+        "name": "code",
+        "arguments": {...}
+      },
+      "observation": {
+        "type": "code",
+        "result": "执行结果"
+      }
+    }
+  ],
+  "final_round": {
+    "think": "最终思考",
+    "answer": "最终答案"
   }
 }
 ```
@@ -89,6 +184,8 @@ API 配置在各个脚本的 `call_api()` 函数中：
 1. **测试图文理解**：使用 `batch_nonstream.py` 或 `batch_stream.py`
 2. **测试规划能力**：使用 `batch_planner_nonstream.py` 或 `batch_planner_stream.py`
 3. **查看结果对比**：使用 `visual.py` 在浏览器中查看
+4. **分析推理过程**：使用 `parse_utils.py` 解析每一轮的思考和工具调用
+5. **批量数据分析**：使用 `parse_jsonl_file()` 处理整个结果文件，统计轮次、工具使用等信息
 
 ## 📦 依赖
 
