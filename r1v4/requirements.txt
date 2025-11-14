@@ -1,2 +1,4 @@
 requests>=2.31.0
-
+tqdm>=4.65.0
+flask>=2.3.0
+Pillow>=10.0.0
