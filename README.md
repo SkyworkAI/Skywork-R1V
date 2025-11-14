@@ -4,16 +4,18 @@
 
 <div align="center">
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/skywork_logo.png" alt="Skywork Logo" width="400">
-  <h1><strong>Skywork-R1V3</strong></h1>
+  <h1><strong>Skywork-R1V</strong></h1>
 </div>
 
-<font size=7><div align='center' >  [[🤗 Skywork-R1V3-38B](https://huggingface.co/Skywork/Skywork-R1V3-38B)] [[📖 Skywork-R1V3 Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V3.pdf)] </div></font>
+<font size=7><div align='center' >  [[📖 Skywork-R1V4-Lite Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V3.pdf)] </div></font>
 
-Welcome to the Skywork-R1V3 repository! Here, you'll find the model weights and inference code for our state-of-the-art open-sourced multimodal reasoning model by reinforcement finetuning.
+Welcome to the Skywork-R1V repository! Here, you'll find a series of state-of-the-art multimodal reasoning models with powerful agentic capabilities. From open-source versions with model weights and inference code to our latest closed-source offerings, the Skywork-R1V series delivers exceptional performance across vision understanding, code execution, and deep research tasks.
 
 ## 🔥 News
 
-**July 15, 2025**: We’ve released quantized versions of ​Skywork-R1V3​ for efficient inference:
+**November 17, 2025**: We released **Skywork-R1V4-Lite**, a lightweight and ultra-fast closed-source multimodal reasoning model that achieves exceptional image understanding capabilities through code execution tools. R1V4-Lite features blazing-fast inference speed and can be integrated with search tools to enable deep research capabilities. Available now on Skywork Platform, and coming soon to OpenRouter—stay tuned!
+
+**July 15, 2025**: We've released quantized versions of ​Skywork-R1V3​ for efficient inference:
 * AWQ Quantization: [🤗 Skywork-R1V3-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V3-38B-AWQ) -- Supports single-GPU inference (VRAM ≥ 30GB).
 * ​GGUF Quantization (4-bit & 8-bit)​: [🤗 Skywork-R1V3-38B-GGUF](https://huggingface.co/Skywork/Skywork-R1V3-38B-GGUF) -- Optimized for CPU-based inference.
 
