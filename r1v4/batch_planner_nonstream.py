@@ -24,6 +24,7 @@ def image_to_base64(image_path):
 
         from mimetypes import guess_type
 
+        # webp格式的guess_type返回None，如果您输入的图片是webp格式，需要手动指定mime_type
         mime_type, _ = guess_type(image_path)
         return f"data:{mime_type};base64,{image_base64}"
 
@@ -32,8 +33,10 @@ def call_api(image_path, question):
     """调用API获取响应"""
 
     # 配置
-    base_url = "https://test-platform-api.singularity-ai.com"
-    api_key = "sk-ELGYcvIJYZnDoiLDxdrDlGIRvZLSFzRB"
+    # 您可以使用skywork platform访问或通过openrouter访问
+    base_url = "https://api.skyworkmodel.ai"
+    # 在这里根据您的base_url填入对应平台的key
+    api_key = ""
 
     # 构建消息内容（图片在前，问题在后）
     content = []
@@ -68,9 +71,7 @@ def call_api(image_path, question):
     try:
         # 发送请求
         print(f"发送请求到: {url}")
-        response = requests.post(
-            url, json=data, headers=headers, timeout=120
-        )
+        response = requests.post(url, json=data, headers=headers, timeout=120)
         print(f"响应状态码: {response.status_code}")
 
         if response.status_code != 200:
@@ -78,7 +79,7 @@ def call_api(image_path, question):
 
         # 非流式模式，直接获取JSON响应
         response_data = response.json()
-        
+
         # 提取响应内容
         full_response = ""
         if "choices" in response_data and len(response_data["choices"]) > 0:
@@ -158,16 +159,12 @@ def main():
     if len(sys.argv) > 1:
         input_jsonl = sys.argv[1]
     else:
-        input_jsonl = (
-            "test_cases.jsonl"
-        )
+        input_jsonl = "test_cases.jsonl"
 
     if len(sys.argv) > 2:
         output_jsonl = sys.argv[2]
     else:
-        output_jsonl = (
-            "result_plan_nonstream.jsonl"
-        )
+        output_jsonl = "result_plan_nonstream.jsonl"
 
     if not os.path.exists(input_jsonl):
         print(f"❌ 错误: 输入文件不存在 - {input_jsonl}")
@@ -178,4 +175,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

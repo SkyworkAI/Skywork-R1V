@@ -24,6 +24,7 @@ def image_to_base64(image_path):
 
         from mimetypes import guess_type
 
+        # webp格式的guess_type返回None，如果您输入的图片是webp格式，需要手动指定mime_type
         mime_type, _ = guess_type(image_path)
         return f"data:{mime_type};base64,{image_base64}"
 
@@ -32,8 +33,10 @@ def call_api(image_path, question):
     """调用API获取响应"""
 
     # 配置
-    base_url = "https://test-platform-api.singularity-ai.com"
-    api_key = "sk-ELGYcvIJYZnDoiLDxdrDlGIRvZLSFzRB"
+    # 您可以使用skywork platform访问或通过openrouter访问
+    base_url = "https://api.skyworkmodel.ai"
+    # 在这里根据您的base_url填入对应平台的key
+    api_key = ""
 
     # 构建消息内容（图片在前，问题在后）
     content = []
@@ -55,6 +58,7 @@ def call_api(image_path, question):
         "messages": [{"role": "user", "content": content}],
         "model": "skywork/r1v4-lite",
         "stream": True,
+        # 如果发现性能不及预期，建议您开启搜索功能提升性能
         "enable_search": False,  # 是否启用搜索功能：True-启用联网搜索, False-不启用（如需启用请修改为True）
     }
 
@@ -62,6 +66,7 @@ def call_api(image_path, question):
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {api_key}",
+        "Accept": "text/event-stream",
     }
 
     url = f"{base_url}/api/v1/chat/completions"
