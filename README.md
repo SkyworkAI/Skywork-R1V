@@ -13,7 +13,7 @@ Welcome to the Skywork-R1V repository! Here, you'll find a series of state-of-th
 
 ## 🔥 News
 
-**💥 November 18, 2025**: We released **Skywork-R1V4-Lite**, a lightweight and ultra-fast closed-source multimodal reasoning model that achieves exceptional image understanding capabilities through code execution tools. R1V4-Lite features blazing-fast inference speed and can be integrated with search tools to enable deep research capabilities. Available now on Skywork Platform, and coming soon to OpenRouter—stay tuned!
+**💥 November 18, 2025**: We released **Skywork-R1V4-Lite**, a lightweight and ultra-fast closed-source multimodal reasoning model that achieves exceptional image understanding capabilities through code execution tools. R1V4-Lite features blazing-fast inference speed and can be integrated with search tools to enable deep research capabilities. Available now on [Skywork Platform](https://platform.skyworkmodel.ai/#/model-center), and coming soon to OpenRouter—stay tuned!
 
 **July 15, 2025**: We've released quantized versions of ​Skywork-R1V3​ for efficient inference:
 * AWQ Quantization: [🤗 Skywork-R1V3-38B-AWQ](https://huggingface.co/Skywork/Skywork-R1V3-38B-AWQ) -- Supports single-GPU inference (VRAM ≥ 30GB).
