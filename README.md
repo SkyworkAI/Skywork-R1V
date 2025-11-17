@@ -4,7 +4,7 @@
 
 <div align="center">
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/skywork_logo.png" alt="Skywork Logo" width="400">
-  <h1><strong>Skywork-R1V</strong></h1>
+  <h1><strong>Skywork-R1V4</strong></h1>
 </div>
 
 <font size=7><div align='center' >  [[📖 Skywork-R1V4 Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V4.pdf)] </div></font>
