@@ -216,6 +216,9 @@ We are excited to share our vision for the future development of the Skywork-R1V
 - **Skywork-R1V4-Pro**: We are developing a more powerful model with enhanced capabilities across all benchmarks. Stay tuned for the upcoming release!
 - **Reinforcement Learning Research**: We are actively exploring the application of reinforcement learning techniques to advance multimodal reasoning and agentic capabilities, pushing the boundaries of what's possible in vision-language AI.
 
+## ❤️Misc
+[![Star History Chart](https://api.star-history.com/svg?repos=SkyworkAI/Skywork-R1V&type=Date)](https://star-history.com/#SkyworkAI/Skywork-R1V&Date)
+
 ## Citation
 If you use Skywork-R1V in your research, please cite:
 ```
