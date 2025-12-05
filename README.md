@@ -222,6 +222,17 @@ We are excited to share our vision for the future development of the Skywork-R1V
 ## Citation
 If you use Skywork-R1V in your research, please cite:
 ```
+@misc{zhang2025skyworkr1v4agenticmultimodalintelligence,
+      title={Skywork-R1V4: Toward Agentic Multimodal Intelligence through Interleaved Thinking with Images and DeepResearch}, 
+      author={Yifan Zhang and Liang Hu and Haofeng Sun and Peiyu Wang and Yichen Wei and Shukang Yin and Jiangbo Pei and Wei Shen and Peng Xia and Yi Peng and Tianyidan Xie and Eric Li and Yang Liu and Xuchen Song and Yahui Zhou},
+      year={2025},
+      eprint={2512.02395},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2512.02395}, 
+}
+```
+```
 @misc{shen2025skyworkr1v3technicalreport,
       title={Skywork-R1V3 Technical Report}, 
       author={Wei Shen and Jiangbo Pei and Yi Peng and Xuchen Song and Yang Liu and Jian Peng and Haofeng Sun and Yunzhuo Hao and Peiyu Wang and Jianhao Zhang and Yahui Zhou},
