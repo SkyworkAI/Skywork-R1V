@@ -244,7 +244,7 @@ If you use Skywork-R1V in your research, please cite:
 }
 ```
 ```
-@misc{chris2025skyworkr1v2multimodalhybrid,
+@misc{wang2025skyworkr1v2multimodalhybrid,
       title={Skywork R1V2: Multimodal Hybrid Reinforcement Learning for Reasoning}, 
       author={Peiyu Wang and Yichen Wei and Yi Peng and Xiaokun Wang and Weijie Qiu and Wei Shen and Tianyidan Xie and Jiangbo Pei and Jianhao Zhang and Yunzhuo Hao and Xuchen Song and Yang Liu and Yahui Zhou},
       year={2025},
