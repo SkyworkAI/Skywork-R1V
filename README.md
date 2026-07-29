@@ -198,26 +198,7 @@ This code repository is licensed under [the MIT License](https://github.com/Skyw
 
 ✅ Distribution allowed
 
-❌ No liability
 
-Skywork-R1V4-Lite is based on [Qwen3-VL-30B-A3B-Instruct](https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct) as the base model, which is licensed under the Apache 2.0 License.
-
-## Acknowledgments
-
-We would like to express our gratitude to the following open-source projects that have been instrumental in our work:
-
-- [MS-SWIFT](https://github.com/modelscope/swift): A powerful framework for model training and fine-tuning that greatly facilitated our model development process.
-- [VLMEvalKit](https://github.com/open-compass/VLMEvalKit): A comprehensive evaluation toolkit for vision-language models that enabled our extensive benchmarking.
-
-## 🔮 Future Directions
-
-We are excited to share our vision for the future development of the Skywork-R1V series:
-
-- **Skywork-R1V4-Pro**: We are developing a more powerful model with enhanced capabilities across all benchmarks. Stay tuned for the upcoming release!
-- **Reinforcement Learning Research**: We are actively exploring the application of reinforcement learning techniques to advance multimodal reasoning and agentic capabilities, pushing the boundaries of what's possible in vision-language AI.
-
-## ❤️Misc
-[![Star History Chart](https://api.star-history.com/svg?repos=SkyworkAI/Skywork-R1V&type=Date)](https://star-history.com/#SkyworkAI/Skywork-R1V&Date)
 
 ## Citation
 If you use Skywork-R1V in your research, please cite:
