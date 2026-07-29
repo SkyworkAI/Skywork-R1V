@@ -4,12 +4,12 @@
 
 <div align="center">
   <img src="https://github.com/SkyworkAI/Skywork-R1V/blob/main/imgs/skywork_logo.png" alt="Skywork Logo" width="400">
-  <h1><strong>Skywork-R1V4</strong></h1>
+  <h1><strong>Skywork-R1V</strong></h1>
 </div>
 
-<font size=7><div align='center' >  [[📖 Skywork-R1V4 Report](https://github.com/SkyworkAI/Skywork-R1V/blob/main/Skywork_R1V4.pdf)] </div></font>
+<font size=7><div align='center' >  [[📖 Skywork-R1V Report](https://arxiv.org/abs/2504.05599)] </div></font>
 
-Welcome to the Skywork-R1V repository! Here, you'll find a series of state-of-the-art multimodal reasoning models with powerful agentic capabilities. From open-source versions with model weights and inference code to our latest closed-source offerings, the Skywork-R1V series delivers exceptional performance across vision understanding, code execution, and deep research tasks.
+Welcome to the Skywork-R1V repository! Here, you'll find a series of state-of-the-art multimodal reasoning models. From open-source versions with model weights and inference code, the Skywork-R1V series delivers exceptional performance across vision understanding, code execution, and deep research tasks.
 
 ## 🔥 News
 
